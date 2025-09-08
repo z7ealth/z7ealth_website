@@ -6,14 +6,21 @@ defmodule Mix.Tasks.Z7ealthWebsite.Build do
 
   @doc false
   def run(_argv) do
-
     source =
       "./_site"
 
     destination = "./docs"
 
     if File.exists?(destination) do
-      File.rm_rf!(destination)
+      destination
+      |> File.ls!()
+      |> Enum.each(fn file ->
+        path = Path.join(destination, file)
+
+        if file != "CNAME" do
+          File.rm_rf!(path)
+        end
+      end)
     end
 
     Mix.Task.run("tableau.build")
