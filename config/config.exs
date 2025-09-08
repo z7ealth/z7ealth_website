@@ -65,5 +65,8 @@ config :tableau, Tableau.RSSExtension,
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
+config :tableau, :config,
+  include_dir: "static"
+
 import_config "#{Mix.env()}.exs"
 
