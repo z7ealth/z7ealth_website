@@ -16,7 +16,7 @@ defmodule Z7ealthWebsite.HomePage do
           />
           <div>
             <h1 id="typed" class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)]  text-3xl lg:text-5xl font-bold"></h1>
-            <p id="typed-skills" class="py-6 font-semibold text-base-content">
+            <p id="typed-skills" class="py-6 font-semibold text-base-content text-xl">
             </p>
             <button class="btn btn-primary">
               <svg
