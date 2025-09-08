@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Z7ealthWebsite.Build do
     destination = "./docs"
 
     if File.exists?(destination) do
-      File.rmdir!(destination)
+      File.rm_rf!(destination)
     end
 
     Mix.Task.run("tableau.build")
