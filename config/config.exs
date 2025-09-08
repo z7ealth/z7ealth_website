@@ -4,7 +4,8 @@ config :tableau, :reloader,
   patterns: [
     ~r"^lib/.*.ex",
     ~r"^(_posts|_pages)/.*.md",
-    ~r"^assets/.*.(css|js)"
+    ~r"^assets/.*.(css|js)",
+    ~r"^lib/components/.*.html.heex"
   ]
 
 config :web_dev_utils, :reload_log, true

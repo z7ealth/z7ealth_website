@@ -2,7 +2,7 @@ defmodule Z7ealthWebsite.RootLayout do
   use Tableau.Layout
   use Phoenix.Component
 
-  import Z7ealthWebsite.Components, only: [navbar: 1]
+  import Z7ealthWebsite.Components, only: [navbar: 1, footer: 1]
 
   def template(assigns) do
     ~H"""
@@ -32,11 +32,12 @@ defmodule Z7ealthWebsite.RootLayout do
         <script src="/js/site.js" />
       </head>
 
-      <body>
+      <body class="flex flex-col min-h-screen">
         <.navbar />
-        <main>
+        <main class="flex-1 py-8 px-16">
           {render(@inner_content)}
         </main>
+        <.footer />
       </body>
 
       <%= if Mix.env() == :dev do %>
