@@ -35,7 +35,7 @@ defmodule Z7ealthWebsite.RootLayout do
 
       <body class="flex flex-col min-h-screen">
         <.navbar />
-        <main class="flex-1 py-8 px-20">
+        <main class="flex-1">
           {render(@inner_content)}
         </main>
         <.footer />
