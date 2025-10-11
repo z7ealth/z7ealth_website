@@ -15,7 +15,7 @@ defmodule Z7ealthWebsite.HomePage do
       </div>
     </.section>
     <.section class="min-h-screen bg-neutral">
-      <div class="p-12">
+      <div class="p-40">
         <.timeline />
       </div>
     </.section>
