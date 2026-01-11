@@ -14,17 +14,18 @@ defmodule Z7ealthWebsite.HomePage do
 
     ~H"""
     <.section class="h-[calc(100vh-14rem)]">
-      <div class="mt-48 px-8">
+      <div class="mt-60 px-8">
         <.hero />
       </div>
     </.section>
-    <.section class="h-100 bg-base-200 flex flex-col items-center justify-center">
-      <div class="p-6 bg-neutral max-w-prose leading-relaxed text-justify font-medium text-neutral-content rounded-4xl text-xs lg:text-lg shadow-xl">
+    <.section class="h-160 bg-base-200 flex flex-col gap-20 items-center justify-center">
+      <h1 class="font-bold text-4xl text-base-content">About me</h1>
+      <div class="p-6 bg-neutral max-w-prose leading-relaxed text-justify font-medium text-neutral-content rounded-4xl text-xs lg:text-2xl shadow-xl">
         {@about_me}
       </div>
     </.section>
-    <.section class="py-12 flex flex-col gap-8 items-center justify-center bg-neutral">
-      <h1 class="font-bold text-2xl text-neutral-content">Core Skills</h1>
+    <.section class="h-240 flex flex-col gap-20 items-center justify-center bg-neutral">
+      <h1 class="font-bold text-4xl text-neutral-content">Core Skills</h1>
       <.core_skills />
     </.section>
     """
