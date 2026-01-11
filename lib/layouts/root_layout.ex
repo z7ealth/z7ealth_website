@@ -44,29 +44,6 @@ defmodule Z7ealthWebsite.RootLayout do
       <%= if Mix.env() == :dev do %>
         {Phoenix.HTML.raw(Tableau.live_reload(assigns))}
       <% end %>
-
-      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">
-      </script>
-
-      <script>
-        new Typed('#typed', {
-           strings: ["Héctor Alonso Salinas García"],
-           typeSpeed: 80,
-           loop: false,
-           showCursor: false
-           });
-
-           new Typed('#typed-skills', {
-           strings: ["Software Developer", "Linux", "Kubernetes", "Cloud"],
-           startDelay: 3000,
-           typeSpeed: 80,
-           backSpeed: 80,
-           backDelay: 2000,
-           loop: true,
-           showCursor: false
-           });
-
-      </script>
     </html>
     """
     |> Phoenix.HTML.Safe.to_iodata()

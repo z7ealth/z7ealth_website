@@ -1,5 +1,5 @@
 @import "tailwindcss"
 
 @plugin "daisyui" {
-  themes: halloween --default --prefersdark, fantasy;
+  themes: halloween --prefersdark, fantasy --default;
 }
