@@ -29,7 +29,7 @@ defmodule Z7ealthWebsite.HomePage do
       </div>
       <div class="w-4xl flex flex-col gap-2">
         <.header title="Certifications" />
-        <p class="text-xl">You can check my certifications at <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a></p>
+        <p class="text-xl">Feel free to explore my certifications on <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a></p>
       </div>
     </.section>
     """
