@@ -7,7 +7,7 @@ defmodule Z7ealthWebsite.RootLayout do
   def template(assigns) do
     ~H"""
     <!DOCTYPE html>
-    <html lang="en" data-theme="halloween">
+    <html lang="en" data-theme="fantasy">
       <head>
         <meta charset="utf-8" />
         <meta http_equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,6 +26,12 @@ defmodule Z7ealthWebsite.RootLayout do
           href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
           rel="stylesheet"
           type="text/css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+          rel="stylesheet"
         />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
         </script>
