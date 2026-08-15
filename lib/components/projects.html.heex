@@ -1,0 +1,31 @@
+<div class="grid gap-4 sm:grid-cols-3">
+  <div
+    :for={
+      {name, tagline, description} <- [
+        {"kubevirt-tools", "RVTools-inspired inventory for KubeVirt",
+         "Open-source utility for KubeVirt / OpenShift Virtualization environments, focused on inventory, visibility, and assessment of Kubernetes-native virtualization platforms."},
+        {"extop", "Elixir/BEAM terminal system monitor",
+         "Terminal system monitor for Linux written in Elixir, in the spirit of btop. Built on the BEAM with a ratatui-based TUI."},
+        {"EXKL", "Open Linux service for DeepCool AK coolers",
+         "Open-source Linux alternative to DeepCool's proprietary control software, enabling monitoring and display support for AK-series digital coolers. Built with Elixir, Phoenix, and LiveView."}
+      ]
+    }
+    class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors"
+  >
+    <div class="card-body gap-2 p-6">
+      <h3 class="card-title text-base-content">{name}</h3>
+      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">{tagline}</p>
+      <p class="text-base text-justify text-base-content/80">{description}</p>
+      <div class="card-actions pt-2">
+        <a
+          href="https://github.com/z7ealth"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link link-primary text-sm font-semibold"
+        >
+          View on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

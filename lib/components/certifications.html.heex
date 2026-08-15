@@ -1,0 +1,29 @@
+<div class="flex flex-col gap-6">
+  <ul class="grid gap-3 sm:grid-cols-2">
+    <li
+      :for={
+        {name, year} <- [
+          {"Red Hat Certified System Administrator (RHCSA, EX200)", "2026"},
+          {"Red Hat Certified System Administrator in OpenShift (EX280)", "2026"},
+          {"CNCF Certified Kubernetes Administrator (CKA)", "2024"},
+          {"Microsoft Certified: Azure Administrator Associate (AZ-104)", "2024"},
+          {"VMware Certified Master Specialist — Cloud Native", "2024"},
+          {"VMware Certified Professional — Data Center Virtualization", "2022"},
+          {"VMware Certified Professional — Application Modernization", "2022"},
+          {"VMware vSphere with Tanzu Specialist", "2022"}
+        ]
+      }
+      class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+      <span class="text-lg leading-snug">{name}</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">{year}</span>
+    </li>
+  </ul>
+  <p class="text-xl">
+    Verified credentials are available on
+    <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a>.
+  </p>
+</div>

@@ -1,22 +1,10 @@
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">{@title}</h2>
-          <p class="text-justify">
-            {@description}
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+<div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">{@title}</h3>
+    <div class="flex flex-wrap gap-2">
+      <span :for={skill <- @skills} class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        {skill}
+      </span>
+    </div>
   </div>
+</div>

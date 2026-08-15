@@ -1,9 +1,88 @@
-@import "tailwindcss"
+@import "tailwindcss";
 
-@plugin "daisyui" {
-  themes: fantasy --default;
+/*
+ * daisyui's component classes and theme tokens are loaded from the CDN
+ * bundle in the root layout (no Node.js toolchain in this project's build).
+ * This block overrides the CSS variables of the "black" base theme with the
+ * site's teal/dark-grey palette. The `html[data-theme]` selector outranks
+ * daisyui's own `[data-theme="black"]` rule so it wins regardless of the
+ * order stylesheets load in.
+ */
+html[data-theme] {
+  color-scheme: dark;
+
+  --color-base-100: #14171a;
+  --color-base-200: #1b1f23;
+  --color-base-300: #262b30;
+  --color-base-content: #e4e7eb;
+
+  --color-primary: #2dd4bf;
+  --color-primary-content: #062420;
+
+  --color-secondary: #3c434b;
+  --color-secondary-content: #e4e7eb;
+
+  --color-accent: #5eead4;
+  --color-accent-content: #062420;
+
+  --color-neutral: #21262c;
+  --color-neutral-content: #c3c9d1;
 }
 
 body {
-  font-family: 'Bitter', serif !important;
+  font-family: "Bitter", serif !important;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent),
+    var(--color-base-100);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+  color: var(--color-base-content);
+}
+
+.text-rotate {
+  overflow: visible;
+}
+
+.text-rotate span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  animation: text-rotate 12s infinite;
+}
+
+.text-rotate span:nth-child(1) {
+  animation-delay: 0s;
+}
+.text-rotate span:nth-child(2) {
+  animation-delay: 3s;
+}
+.text-rotate span:nth-child(3) {
+  animation-delay: 6s;
+}
+.text-rotate span:nth-child(4) {
+  animation-delay: 9s;
+}
+
+@keyframes text-rotate {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  4%,
+  21% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%,
+  100% {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
 }

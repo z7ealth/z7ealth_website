@@ -1,260 +1,501 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="fantasy">
+<html lang="en" data-theme="dark" class="scroll-smooth">
   <head>
     <meta charset="utf-8">
     <meta http_equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#14171a">
+    <meta name="description" content="Héctor Salinas — Staff Platform Engineer specializing in Kubernetes, OpenShift, hybrid cloud and enterprise Linux.">
 
     <title>
-      z7ealth.dev
+      z7ealth
     </title>
 
+    <link rel="icon" href="/images/z7ealth.jpg" type="image/jpeg">
     <link rel="stylesheet" href="/css/site.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
     </script>
 
     <script src="/js/site.js"></script>
   </head>
 
-  <body class="flex flex-col min-h-screen">
-    <div class="navbar bg-base-100 px-20">
- <div class="flex-1">
-    <h1 class="text-primary text-2xl font-semibold">z7ealth.dev</h1>
+  <body class="flex flex-col min-h-screen bg-base-100 text-base-content">
+    <div class="navbar sticky top-0 z-50 bg-base-100/80 backdrop-blur border-b border-base-300 px-4 sm:px-8 lg:px-20">
+  <div class="flex-1">
+    <a href="#" class="text-primary text-xl sm:text-2xl font-semibold tracking-tight">
+      z7ealth
+    </a>
   </div>
-</div>
-    <main class="flex-1">
-      <section class="p-8 flex flex-col gap-4 justify-center items-center">
-  
-  <div class="hero">
-  <div class="hero-content flex flex-col gap-6 justify-center !items-center">
-    <img src="/images/hs.jpg" class="w-64 rounded-lg shadow-lg">
-    <h1 id="typed" class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-4xl lg:text-6xl font-bold">
-      Héctor Salinas
-    </h1>
-    <span class="text-rotate text-4xl font-semibold leading-[2] text-neutral">
-      <span class="justify-items-center">
-        <span>APPLICATION MODERNIZATION</span>
-        <span>CLOUD-NATIVE & PLATFORM SYSTEMS</span>
-        <span>AUTOMATION</span>
-        <span>VIRTUALIZATION</span>
-      </span>
-    </span>
-    <a href="mailto:ha_sg@outlook.com" class="btn btn-lg btn-soft btn-primary font-bold">
-      Get in touch!
+  <div class="hidden md:flex items-center gap-1 text-sm font-medium uppercase tracking-wide">
+    <a href="#about" class="btn btn-ghost btn-sm">About</a>
+    <a href="#experience" class="btn btn-ghost btn-sm">Experience</a>
+    <a href="#skills" class="btn btn-ghost btn-sm">Skills</a>
+    <a href="#certifications" class="btn btn-ghost btn-sm">Certifications</a>
+    <a href="#projects" class="btn btn-ghost btn-sm">Projects</a>
+  </div>
+  <div class="flex-none flex items-center gap-2 pl-2">
+    <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="btn btn-ghost btn-circle btn-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+        <path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.77-.24.77-.54 0-.27-.01-1.13-.02-2.04-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.94.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.11 1.15a10.8 10.8 0 0 1 5.66 0c2.16-1.45 3.11-1.15 3.11-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.65.78.54A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"></path>
+      </svg>
+    </a>
+    <a href="mailto:ha_sg@outlook.com" class="btn btn-primary btn-sm hidden sm:inline-flex">
+      Contact
     </a>
   </div>
 </div>
-  <div class="w-4xl flex flex-col gap-2">
-    <h1 class="font-semibold text-xl uppercase text-primary leading-2 py-4"># About me</h1>
-    <p class="text-xl text-justify">I’m a Systems Engineer focused on application modernization, with a strong background in software development and Linux-based infrastructure. I work at the intersection of systems reliability and developer experience, building platforms that are scalable, fault-tolerant, and maintainable.
-        Recently, I’ve been building distributed web applications using Elixir and the Phoenix Framework, while also working extensively with Linux, Kubernetes, and Ansible to design and operate production systems.</p>
+    <main class="flex-1">
+      <section class="px-4 sm:px-8 py-8 flex flex-col gap-16 justify-center items-center">
+  
+  <div class="hero pt-16 pb-8">
+  <div class="hero-content flex flex-col gap-6 justify-center !items-center text-center">
+    <img src="/images/hs.jpg" class="w-40 sm:w-48 rounded-full ring-2 ring-[var(--color-primary)] shadow-lg">
+    <div class="flex flex-col gap-2">
+      <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] text-4xl lg:text-6xl font-bold">
+        Héctor Salinas
+      </h1>
+      <p class="text-base-content/60 text-lg font-medium">
+        Staff Platform Engineer · Monterrey, México
+      </p>
+    </div>
+    <div class="text-rotate relative w-full max-w-2xl mx-auto min-h-32 text-2xl sm:text-3xl font-semibold leading-tight text-base-content/85">
+      <span>OPENSHIFT &amp; KUBERNETES ARCHITECTURE</span>
+      <span>HYBRID CLOUD &amp; VMWARE MIGRATION</span>
+      <span>ENTERPRISE LINUX AT SCALE</span>
+      <span>INFRASTRUCTURE AUTOMATION</span>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center pt-2">
+      <a href="mailto:ha_sg@outlook.com" class="btn btn-lg btn-primary font-bold">
+        Get in touch
+      </a>
+      <a href="https://github.com/z7ealth" target="_blank" class="btn btn-lg btn-outline btn-secondary font-bold">
+        View GitHub
+      </a>
+    </div>
   </div>
-  <div class="w-4xl flex flex-col gap-2">
-    <h1 class="font-semibold text-xl uppercase text-primary leading-2 py-4"># Focus Areas</h1>
-    <ul class="list bg-base-100 rounded-box border border-base-300 p-12">
+</div>
+
+  <div id="about" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>About me
+</h2>
+    <p class="text-xl text-justify">I&#39;m a Staff Platform Engineer with 10+ years across enterprise Linux, Kubernetes/OpenShift, VMware virtualization, and software engineering. I specialize in hybrid cloud platforms, OpenShift Virtualization, infrastructure automation, and troubleshooting complex enterprise environments at scale.
+        I lead modernization initiatives, enterprise Linux operations, and VMware-to-Kubernetes migrations, and collaborate regularly with Red Hat TAMs, architects, and support engineering on critical infrastructure escalations.</p>
+  </div>
+
+  <div id="experience" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>Experience
+</h2>
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+  <li>
+    <div class="timeline-middle text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic text-primary">2025 – Present</time>
+      <div class="text-lg font-black">OpenShift Architect / Platform Engineer</div>
+      <div class="font-semibold opacity-70 pb-1">OXXO</div>
+      Designed and implemented enterprise OpenShift infrastructure across Monterrey and Querétaro data
+      centers. Led the migration of 120+ VMware virtual machines into OpenShift Virtualization, built a
+      custom Forklift controller image to unblock production ahead of an official upstream fix, and
+      implemented Dell PowerMax CSI integration later referenced by Dell engineering teams.
+    </div>
+    <hr>
+  </li>
+  <li>
+    <hr>
+    <div class="timeline-middle text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="timeline-end md:mb-10">
+      <time class="font-mono italic text-primary">2025 – Present (concurrent)</time>
+      <div class="text-lg font-black">Linux Platform Manager</div>
+      <div class="font-semibold opacity-70 pb-1">The Home Depot México</div>
+      Lead enterprise Linux platform operations and governance across critical production infrastructure.
+      Implemented Red Hat Satellite 6.16 for centralized patch management and content lifecycle, and manage
+      Red Hat IdM, Ansible automation, Linux hardening, and RHEL upgrade programs.
+    </div>
+    <hr>
+  </li>
+  <li>
+    <hr>
+    <div class="timeline-middle text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic text-primary">2022 – 2024</time>
+      <div class="text-lg font-black">Cloud Architect</div>
+      <div class="font-semibold opacity-70 pb-1">OXXO</div>
+      Designed cloud architectures for enterprise modernization initiatives and led the technical migration of
+      Java monolith applications toward cloud-native microservices, partnering with development and
+      infrastructure teams on architecture and governance.
+    </div>
+    <hr>
+  </li>
+  <li>
+    <hr>
+    <div class="timeline-middle text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="timeline-end md:mb-10">
+      <time class="font-mono italic text-primary">2021 – 2022</time>
+      <div class="text-lg font-black">Linux System Administrator</div>
+      <div class="font-semibold opacity-70 pb-1">The Home Depot México</div>
+      Administered Red Hat Enterprise Linux environments supporting enterprise production workloads,
+      resolving infrastructure incidents and handling OS maintenance, patching, and troubleshooting.
+    </div>
+    <hr>
+  </li>
+  <li>
+    <hr>
+    <div class="timeline-middle text-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <div class="timeline-start mb-10 md:text-end">
+      <time class="font-mono italic text-primary">2016 – 2021</time>
+      <div class="text-lg font-black">Software Engineering Background</div>
+      <div class="font-semibold opacity-70 pb-1">
+        Daltum Systems · Inmar Winston Data · Osiris HealthTech Systems · Concéntrico · NHPSoft
+      </div>
+      Full stack and backend development roles building web applications, prior to moving into platform and
+      infrastructure engineering.
+    </div>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>Focus Areas
+</h2>
+    <ul class="list bg-base-200/60 rounded-box border border-base-300 p-6 sm:p-12">
   <li class="list-row">
-    <div>
+    <div class="text-primary">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25m0-9L3 7.5m9 5.25v9M3 7.5v9l9 5.25"></path>
       </svg>
     </div>
     <div>
-      <div class="text-xl font-semibold">Software Development</div>
-      <div class="text-lg uppercase font-semibold opacity-60">Web & Mobile Apps</div>
+      <div class="text-xl font-semibold">Platform Engineering</div>
+      <div class="text-lg uppercase font-semibold opacity-60">
+        OpenShift, Kubernetes &amp; Hybrid Cloud
+      </div>
     </div>
     <p class="list-col-wrap text-lg text-justify">
-      I build backend-focused web applications with an emphasis on correctness, scalability, and maintainability.
-      My work includes designing APIs, implementing business logic, and integrating systems, with experience building fault-tolerant services using Elixir and the Phoenix Framework.
+      I design and operate enterprise OpenShift and Kubernetes platforms, including KubeVirt/OpenShift
+      Virtualization, large-scale VMware-to-Kubernetes migrations, and storage integrations. I act as the
+      technical escalation point for complex platform issues, working directly with Red Hat TAMs and support
+      engineering.
     </p>
   </li>
 
   <li class="list-row">
-    <div>
+    <div class="text-primary">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"></path>
       </svg>
     </div>
     <div>
-      <div class="text-xl font-semibold">Infrastructure</div>
+      <div class="text-xl font-semibold">Enterprise Linux Operations</div>
       <div class="text-lg uppercase font-semibold opacity-60">
-        Platform Systems / Public & Private Clouds
+        RHEL, Governance &amp; Hardening at Scale
       </div>
     </div>
     <p class="list-col-wrap text-lg text-justify">
-      I design, operate, and maintain Linux-based infrastructure supporting production workloads. My experience includes working with Kubernetes to deploy and scale applications, managing cloud and on-prem environments, and ensuring reliability through monitoring, automation, and sound operational practices.
+      I lead enterprise Linux platform operations across critical production infrastructure: centralized patch
+      management with Red Hat Satellite, identity management with Red Hat IdM, SELinux and system hardening,
+      and RHEL upgrade programs at scale.
     </p>
   </li>
 
   <li class="list-row">
-    <div>
+    <div class="text-primary">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
         <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"></path>
       </svg>
     </div>
     <div>
-      <div class="text-xl font-semibold">Automation</div>
+      <div class="text-xl font-semibold">Automation &amp; Software Engineering</div>
       <div class="text-lg uppercase font-semibold opacity-60">
-        CI-CD Pipelines / IT Automation / IAC
+        IaC, CI/CD &amp; Full-Stack Development
       </div>
     </div>
     <p class="list-col-wrap text-lg text-justify">
-      I automate infrastructure and deployment workflows to reduce manual work and improve consistency. This includes building CI/CD pipelines, provisioning systems with Ansible, and codifying infrastructure to enable repeatable, reliable environments across development and production.
+      I automate infrastructure and deployment workflows with Ansible and codify operational practices to make
+      environments repeatable and reliable. My software engineering background in Elixir/Phoenix, Go, and
+      TypeScript keeps me close to the developer experience side of the platforms I build.
     </p>
   </li>
 </ul>
   </div>
-  <div class="w-4xl flex flex-col gap-2">
-    <h1 class="font-semibold text-xl uppercase text-primary leading-2 py-4"># Main tech stack</h1>
-    <div class="grid grid-cols-2 gap-6">
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Elixir</h2>
-          <p class="text-justify">
-            Dynamic, functional programming language for building scalable and maintainable applications.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Kubernetes</h2>
-          <p class="text-justify">
-            Container orchestration platform that automates the deployment, scaling, and management of containerized applications.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Azure</h2>
-          <p class="text-justify">
-            Microsoft&#39;s cloud computing platform, offering over 200 services for building, running, and managing applications and services across various clouds, on-premises, and at the edge.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Ansible</h2>
-          <p class="text-justify">
-            Open source IT automation engine that automates provisioning, configuration management, application deployment, orchestration, and many other IT processes.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Linux</h2>
-          <p class="text-justify">
-            Free, open-source, Unix-like operating system (OS) kernel that forms the foundation for various complete operating systems used across servers, desktops, mobile devices, and supercomputers.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="hover-3d">
-    <!-- content -->
-    <figure>
-      <div class="card bg-base-100 border border-base-300 h-40">
-        <div class="card-body">
-          <h2 class="card-title">Phoenix Framework</h2>
-          <p class="text-justify">
-            High-performance, scalable web development framework for the Elixir programming language, known for combining developer productivity with exceptional speed, running on the robust Erlang VM for concurrency.
-          </p>
-        </div>
-      </div>
-    </figure>
-    <!-- 8 empty divs needed for the 3D effect -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
+  <div id="skills" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>Technical Skills
+</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Platform &amp; Orchestration</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        OpenShift
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Kubernetes
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        KubeVirt
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        OpenShift Virtualization
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Forklift/MTV
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Operators
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Helm
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Kustomize
+      </span>
+    </div>
   </div>
 </div>
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Enterprise Linux</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        RHEL 7/8/9
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Red Hat Satellite
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Red Hat IdM
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        SELinux
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        LVM
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        systemd
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Podman
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Ansible
+      </span>
+    </div>
   </div>
-  <div class="w-4xl flex flex-col gap-2">
-    <h1 class="font-semibold text-xl uppercase text-primary leading-2 py-4"># Certifications</h1>
-    <p class="text-xl">Feel free to explore my certifications on <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a></p>
+</div>
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Virtualization &amp; Infrastructure</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        VMware vSphere 8
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Tanzu
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Microsoft Azure
+      </span>
+    </div>
+  </div>
+</div>
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Storage &amp; Data</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        OpenShift Data Foundation (Ceph)
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Dell PowerMax CSI
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        NFS
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        CDI / StorageProfiles
+      </span>
+    </div>
+  </div>
+</div>
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Observability &amp; Reliability</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Prometheus
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Alertmanager
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Grafana
+      </span>
+    </div>
+  </div>
+</div>
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+  <div class="card-body gap-3 p-6">
+    <h3 class="card-title text-base-content text-lg">Development</h3>
+    <div class="flex flex-wrap gap-2">
+      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Elixir / Phoenix
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Go
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        TypeScript
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        JavaScript
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Node.js
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        React
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Vue.js
+      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
+        Bash
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div id="certifications" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>Certifications
+</h2>
+    <div class="flex flex-col gap-6">
+  <ul class="grid gap-3 sm:grid-cols-2">
+    <li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">Red Hat Certified System Administrator (RHCSA, EX200)</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2026</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">Red Hat Certified System Administrator in OpenShift (EX280)</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2026</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">CNCF Certified Kubernetes Administrator (CKA)</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">Microsoft Certified: Azure Administrator Associate (AZ-104)</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">VMware Certified Master Specialist — Cloud Native</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">VMware Certified Professional — Data Center Virtualization</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">VMware Certified Professional — Application Modernization</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
+    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <span class="text-lg leading-snug">VMware vSphere with Tanzu Specialist</span>
+      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
+    </li>
+  </ul>
+  <p class="text-xl">
+    Verified credentials are available on
+    <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a>.
+  </p>
+</div>
+  </div>
+
+  <div id="projects" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
+    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
+  <span class="text-base-content/30 pr-2">#</span>Open Source &amp; Personal Projects
+</h2>
+    <div class="grid gap-4 sm:grid-cols-3">
+  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+    <div class="card-body gap-2 p-6">
+      <h3 class="card-title text-base-content">kubevirt-tools</h3>
+      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">RVTools-inspired inventory for KubeVirt</p>
+      <p class="text-base text-justify text-base-content/80">Open-source utility for KubeVirt / OpenShift Virtualization environments, focused on inventory, visibility, and assessment of Kubernetes-native virtualization platforms.</p>
+      <div class="card-actions pt-2">
+        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
+          View on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div><div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+    <div class="card-body gap-2 p-6">
+      <h3 class="card-title text-base-content">extop</h3>
+      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">Elixir/BEAM terminal system monitor</p>
+      <p class="text-base text-justify text-base-content/80">Terminal system monitor for Linux written in Elixir, in the spirit of btop. Built on the BEAM with a ratatui-based TUI.</p>
+      <div class="card-actions pt-2">
+        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
+          View on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div><div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
+    <div class="card-body gap-2 p-6">
+      <h3 class="card-title text-base-content">EXKL</h3>
+      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">Open Linux service for DeepCool AK coolers</p>
+      <p class="text-base text-justify text-base-content/80">Open-source Linux alternative to DeepCool&#39;s proprietary control software, enabling monitoring and display support for AK-series digital coolers. Built with Elixir, Phoenix, and LiveView.</p>
+      <div class="card-actions pt-2">
+        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
+          View on GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
 
 </section>
     </main>
-    <footer class="footer sm:footer-horizontal footer-center bg-base-100 text-base-content p-4 h-40 text-xl">
+    <footer class="footer sm:footer-horizontal footer-center bg-base-100 border-t border-base-300 text-base-content p-8 gap-4">
+  <nav class="flex gap-4">
+    <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-base-content/60 hover:text-primary transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.77-.24.77-.54 0-.27-.01-1.13-.02-2.04-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.94.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.11 1.15a10.8 10.8 0 0 1 5.66 0c2.16-1.45 3.11-1.15 3.11-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.65.78.54A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"></path>
+      </svg>
+    </a>
+    <a href="mailto:ha_sg@outlook.com" aria-label="Email" class="text-base-content/60 hover:text-primary transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-.83.67-1.5 1.5-1.5h16.5c.83 0 1.5.67 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75Z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"></path>
+      </svg>
+    </a>
+    <a href="https://www.credly.com/users/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="Credly" class="text-base-content/60 hover:text-primary transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+    </a>
+  </nav>
   <aside>
-    <p>© 2026 Héctor Salinas - z7ealth.dev</p>
+    <p class="text-base-content/60">© 2026 Héctor Salinas · z7ealth</p>
   </aside>
 </footer>
   </body>

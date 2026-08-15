@@ -1,28 +1,37 @@
-<div class="hero">
-  <div class="hero-content flex flex-col gap-6 justify-center !items-center">
+<div class="hero pt-16 pb-8">
+  <div class="hero-content flex flex-col gap-6 justify-center !items-center text-center">
     <img
       src="/images/hs.jpg"
-      class="w-64 rounded-lg shadow-lg"
+      class="w-40 sm:w-48 rounded-full ring-2 ring-[var(--color-primary)] shadow-lg"
     />
-    <h1
-      id="typed"
-      class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] text-4xl lg:text-6xl font-bold"
-    >
-      Héctor Salinas
-    </h1>
-    <span class="text-rotate text-4xl font-semibold leading-[2] text-neutral">
-      <span class="justify-items-center">
-        <span>APPLICATION MODERNIZATION</span>
-        <span>CLOUD-NATIVE & PLATFORM SYSTEMS</span>
-        <span>AUTOMATION</span>
-        <span>VIRTUALIZATION</span>
-      </span>
-    </span>
-    <.link
-      class="btn btn-lg btn-soft btn-primary font-bold"
-      href="mailto:ha_sg@outlook.com"
-    >
-      Get in touch!
-    </.link>
+    <div class="flex flex-col gap-2">
+      <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] text-4xl lg:text-6xl font-bold">
+        Héctor Salinas
+      </h1>
+      <p class="text-base-content/60 text-lg font-medium">
+        Staff Platform Engineer · Monterrey, México
+      </p>
+    </div>
+    <div class="text-rotate relative w-full max-w-2xl mx-auto min-h-32 text-2xl sm:text-3xl font-semibold leading-tight text-base-content/85">
+      <span>OPENSHIFT &amp; KUBERNETES ARCHITECTURE</span>
+      <span>HYBRID CLOUD &amp; VMWARE MIGRATION</span>
+      <span>ENTERPRISE LINUX AT SCALE</span>
+      <span>INFRASTRUCTURE AUTOMATION</span>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center pt-2">
+      <.link
+        class="btn btn-lg btn-primary font-bold"
+        href="mailto:ha_sg@outlook.com"
+      >
+        Get in touch
+      </.link>
+      <.link
+        class="btn btn-lg btn-outline btn-secondary font-bold"
+        href="https://github.com/z7ealth"
+        target="_blank"
+      >
+        View GitHub
+      </.link>
+    </div>
   </div>
 </div>
