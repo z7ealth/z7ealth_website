@@ -4,7 +4,7 @@ defmodule Z7ealthWebsite.PostLayout do
 
   def template(assigns) do
     ~H"""
-    <%= {:safe, render(@inner_content)} %>
+    {{:safe, render(@inner_content)}}
     """
   end
 end

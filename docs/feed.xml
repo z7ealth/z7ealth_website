@@ -1,9 +1,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <atom:link href="http://localhost:4999/feed.xml" rel="self" type="application/rss+xml" />
-  <title>z7ealth_website</title>
-  <link>http://localhost:4999</link>
-  <description>My beautiful website</description>
+  <atom:link href="https://z7ealth.me/feed.xml" rel="self" type="application/rss+xml" />
+  <title>z7ealth</title>
+  <link>https://z7ealth.me</link>
+  <description>Héctor Salinas — Staff Platform Engineer</description>
   <language>en-us</language>
   <generator>Tableau v0.29.0</generator>
   </channel>

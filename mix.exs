@@ -24,12 +24,17 @@ defmodule Z7ealthWebsite.MixProject do
   defp deps do
     [
       {:tableau, "~> 0.26"},
-      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
-      {:phoenix_live_view, "~> 1.0"},
-      {:esbuild, "~> 0.10", runtime: Mix.env() == :dev}
-
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:tailwind, "~> 0.5", runtime: Mix.env() == :dev},
+      {:phoenix_live_view, "~> 1.2"},
+      {:phoenix_paper, "~> 0.5.6"},
+      {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
+      {:heroicons,
+       github: "tailwindlabs/heroicons",
+       tag: "v2.2.0",
+       sparse: "optimized",
+       app: false,
+       compile: false,
+       depth: 1}
     ]
   end
 

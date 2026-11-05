@@ -1,562 +1,1691 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8">
-    <meta http_equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#14171a">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f1514">
     <meta name="description" content="Héctor Salinas — Staff Platform Engineer specializing in Kubernetes, OpenShift, hybrid cloud and enterprise Linux.">
 
     <title>
-      z7ealth
+      z7ealth · Héctor Salinas
     </title>
 
     <link rel="icon" href="/images/z7ealth.jpg" type="image/jpeg">
+    <link rel="preload" href="/fonts/roboto-flex/roboto-flex-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/css/site.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+    <script defer src="/js/site.js">
     </script>
-
-    <script src="/js/site.js"></script>
+    
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("phx:theme");
+          if (theme) document.documentElement.setAttribute("data-theme", theme);
+        } catch (_) {}
+      })();
+    </script>
   </head>
 
-  <body class="flex flex-col min-h-screen bg-base-100 text-base-content">
-    <div class="navbar sticky top-0 z-50 bg-base-100/80 backdrop-blur border-b border-base-300 px-4 sm:px-8 lg:px-20">
-  <div class="flex-1">
-    <a href="#" class="text-primary text-xl sm:text-2xl font-semibold tracking-tight">
-      z7ealth
-    </a>
-  </div>
-  <div class="hidden md:flex items-center gap-1 text-sm font-medium uppercase tracking-wide">
-    <a href="#about" class="btn btn-ghost btn-sm">About</a>
-    <a href="#experience" class="btn btn-ghost btn-sm">Experience</a>
-    <a href="#skills" class="btn btn-ghost btn-sm">Skills</a>
-    <a href="#certifications" class="btn btn-ghost btn-sm">Certifications</a>
-    <a href="#projects" class="btn btn-ghost btn-sm">Projects</a>
-  </div>
-  <div class="flex-none flex items-center gap-2 pl-2">
-    <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="btn btn-ghost btn-circle btn-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
-        <path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.77-.24.77-.54 0-.27-.01-1.13-.02-2.04-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.94.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.11 1.15a10.8 10.8 0 0 1 5.66 0c2.16-1.45 3.11-1.15 3.11-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.65.78.54A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"></path>
-      </svg>
-    </a>
-    <a href="mailto:ha_sg@outlook.com" class="btn btn-primary btn-sm hidden sm:inline-flex">
-      Contact
-    </a>
-  </div>
-</div>
-    <main class="flex-1">
-      <section class="px-4 sm:px-8 py-8 flex flex-col gap-16 justify-center items-center">
+  <body class="bg-pp-surface text-pp-on-surface antialiased">
+    <header data-pp-component="top-app-bar" data-pp-variant="small" class="bg-pp-surface text-pp-on-surface pp-top-app-bar-scroll pp-motion-effects-default data-pp-scrolled:bg-pp-surface-container sticky top-0 z-20 site-bar z-40 px-3 sm:px-6 lg:px-8">
+  <div class="grid h-16 grid-cols-[auto_1fr_auto] items-center gap-1 px-1">
+    <div class="flex min-w-0 items-center justify-start">
+        <a href="/#top" class="flex items-center rounded-pp-full pp-focus-ring" aria-label="z7ealth home">
+          <span class="inline-flex items-center gap-2.5 ">
+  <img src="/images/z7ealth.jpg" alt="" class="size-8 rounded-pp-full">
+  <span class="pp-title-large tracking-tight">z<span class="text-pp-primary">7</span>ealth</span>
+</span>
+        </a>
+      </div>
+    <div class="flex min-w-0 flex-col px-3">
+      <div class="truncate pp-title-large">
+        
+      <span class="sr-only">z7ealth</span>
+      
+      </div>
+      
+    </div>
+    <div class="flex items-center justify-end gap-0.5">
+        <nav class="hidden lg:flex items-center gap-1 mr-2" aria-label="Sections">
+          <a href="/#about" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-secondary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden px-4!" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
   
-  <div class="hero pt-16 pb-8">
-  <div class="hero-content flex flex-col gap-6 justify-center !items-center text-center">
-    <img src="/images/hs.jpg" class="w-40 sm:w-48 rounded-full ring-2 ring-[var(--color-primary)] shadow-lg">
-    <div class="flex flex-col gap-2">
-      <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] text-4xl lg:text-6xl font-bold">
-        Héctor Salinas
+
+
+            About
+          
+
+</a>
+<a href="/#experience" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-secondary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden px-4!" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+
+            Experience
+          
+
+</a>
+<a href="/#skills" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-secondary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden px-4!" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+
+            Skills
+          
+
+</a>
+<a href="/#certifications" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-secondary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden px-4!" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+
+            Certifications
+          
+
+</a>
+<a href="/#projects" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-secondary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden px-4!" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+
+            Projects
+          
+
+</a>
+
+        </nav>
+        <div class="hidden sm:flex">
+          <span data-pp-component="tooltip" class="group/tooltip relative inline-flex" onmouseenter="this.querySelectorAll(&#39;[title]:not([role=tooltip] *)&#39;).forEach(function(e){e.removeAttribute(&#39;title&#39;)})">
+  
+            <a href="https://github.com/z7ealth" title="z7ealth on GitHub" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 w-10 text-[24px] rounded-[20px] active:rounded-pp-sm text-pp-on-surface-variant disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" aria-label="z7ealth on GitHub" data-pp-component="icon-button" data-pp-variant="standard" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+
+              <svg viewBox="0 0 24 24" fill="currentColor" class="size-5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+            
+</a>
+
+          
+  <span role="tooltip" data-pp-component="tooltip-bubble" data-pp-variant="plain" data-pp-placement="bottom" class="absolute z-30 invisible opacity-0 transition-[opacity,visibility] duration-150 ease-pp-standard group-hover/tooltip:visible group-hover/tooltip:opacity-100 group-hover/tooltip:delay-300 group-focus-within/tooltip:visible group-focus-within/tooltip:opacity-100 pointer-events-none top-full left-1/2 -translate-x-1/2 pt-1">
+    <span class="block w-max max-w-[200px] rounded-pp-xs bg-pp-inverse-surface px-2 py-1 pp-body-small text-pp-inverse-on-surface">
+      
+      z7ealth on GitHub
+      
+    </span>
+  </span>
+</span>
+        </div>
+        <div class="hidden sm:flex"><div data-pp-component="theme-toggle" data-pp-target="html" class="inline-flex items-center gap-2">
+  <div role="group" aria-label="Theme" class="relative inline-flex shrink-0 items-center rounded-pp-full border border-pp-outline-variant p-0.5">
+    <span aria-hidden="true" class="pointer-events-none absolute start-0.5 top-0.5 size-8 rounded-pp-full bg-pp-secondary-container pp-motion-spatial-default [[data-theme=light]_&amp;]:translate-x-8 [[data-theme=dark]_&amp;]:translate-x-16"></span>
+    <button type="button" aria-label="System theme" title="System theme" data-pp-theme="system" phx-value-theme="system" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;system&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-secondary-container pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-surface-variant [[data-theme=dark]_&amp;]:text-pp-on-surface-variant">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-computer-desktop-micro"></span>
+    </button><button type="button" aria-label="Light theme" title="Light theme" data-pp-theme="light" phx-value-theme="light" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;light&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-sun-micro"></span>
+    </button><button type="button" aria-label="Dark theme" title="Dark theme" data-pp-theme="dark" phx-value-theme="dark" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;dark&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=dark]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-moon-micro"></span>
+    </button>
+  </div>
+  
+</div></div>
+        <div class="hidden md:flex ml-2">
+          <a href="mailto:ha_sg@outlook.com" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm bg-pp-primary text-pp-on-primary hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="filled" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+
+Contact
+
+</a>
+
+        </div>
+        
+<button type="button" aria-label="Menu" title="Menu" data-pp-component="icon-button" data-pp-variant="standard" class="inline-flex shrink-0 items-center justify-center cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 w-10 text-[24px] rounded-[20px] active:rounded-pp-sm text-pp-on-surface-variant disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden lg:hidden" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)" id="mobile-nav-button" phx-click="[[&quot;show&quot;,{&quot;to&quot;:&quot;#mobile-nav&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-decelerate&quot;],[&quot;opacity-0&quot;],[&quot;opacity-100&quot;]]}],[&quot;show&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;}],[&quot;show&quot;,{&quot;display&quot;:&quot;block&quot;,&quot;time&quot;:400,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-400&quot;,&quot;ease-pp-emphasized-decelerate&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;],[&quot;translate-x-0&quot;]]}],[&quot;focus_first&quot;,{&quot;to&quot;:&quot;#mobile-nav-content&quot;}]]" aria-controls="mobile-nav">
+  
+
+
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-bars-3 size-6"></span>
+        
+</button>
+      </div>
+  </div>
+
+  
+</header>
+
+    
+    <div id="mobile-nav" phx-remove="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" data-cancel="[[&quot;exec&quot;,{&quot;attr&quot;:&quot;phx-remove&quot;}]]" data-pp-component="side-sheet" data-pp-variant="modal" class="fixed inset-0 z-50 hidden">
+  <div id="mobile-nav-backdrop" class="fixed inset-0 transition-opacity bg-pp-scrim/32" aria-hidden="true"></div>
+  <div id="mobile-nav-container" phx-hook="Phoenix.FocusWrap" role="dialog" class="fixed inset-y-0 end-0 hidden w-[min(400px,calc(100vw-3.5rem))] rounded-s-pp-lg bg-pp-surface-container-low text-pp-on-surface pp-elevation-1" aria-modal="true" phx-click-away="[[&quot;exec&quot;,{&quot;to&quot;:&quot;#mobile-nav&quot;,&quot;attr&quot;:&quot;data-cancel&quot;}]]" phx-key="escape" phx-window-keydown="[[&quot;exec&quot;,{&quot;to&quot;:&quot;#mobile-nav&quot;,&quot;attr&quot;:&quot;data-cancel&quot;}]]" aria-labelledby="mobile-nav-title">
+  <div id="mobile-nav-container-start" tabindex="0" aria-hidden="true"></div>
+  
+    <div id="mobile-nav-content" class="flex h-full flex-col">
+      <div class="flex min-h-[72px] items-center gap-1 ps-4 pe-3 pt-3 pb-4">
+  
+  <h2 id="mobile-nav-title" class="flex-1 truncate pp-title-large text-pp-on-surface-variant">
+    z7ealth
+  </h2>
+  
+  
+<button type="button" aria-label="Close" title="Close" data-pp-component="icon-button" data-pp-variant="standard" class="inline-flex shrink-0 items-center justify-center cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 w-10 text-[24px] rounded-[20px] active:rounded-pp-sm text-pp-on-surface-variant disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)" phx-click="[[&quot;exec&quot;,{&quot;to&quot;:&quot;#mobile-nav&quot;,&quot;attr&quot;:&quot;data-cancel&quot;}]]">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-x-mark size-[1em]"></span>
+
+
+</button>
+</div>
+<div class="flex-1 overflow-y-auto px-6 pb-6">
+  
+      <div role="list" data-pp-component="list" class="flex flex-col py-2" aria-label="Sections">
+  
+        <a href="/#about" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" phx-click="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          About
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-chevron-right"></span>
+</span>
+</a>
+<a href="/#experience" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" phx-click="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          Experience
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-chevron-right"></span>
+</span>
+</a>
+<a href="/#skills" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" phx-click="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          Skills
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-chevron-right"></span>
+</span>
+</a>
+<a href="/#certifications" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" phx-click="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          Certifications
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-chevron-right"></span>
+</span>
+</a>
+<a href="/#projects" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" phx-click="[[&quot;hide&quot;,{&quot;to&quot;:&quot;#mobile-nav-backdrop&quot;,&quot;transition&quot;:[[&quot;transition-opacity&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;opacity-100&quot;],[&quot;opacity-0&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav-container&quot;,&quot;transition&quot;:[[&quot;transition-transform&quot;,&quot;duration-200&quot;,&quot;ease-pp-emphasized-accelerate&quot;],[&quot;translate-x-0&quot;],[&quot;translate-x-full&quot;,&quot;rtl:-translate-x-full&quot;]]}],[&quot;hide&quot;,{&quot;time&quot;:200,&quot;to&quot;:&quot;#mobile-nav&quot;}],[&quot;pop_focus&quot;,{}]]" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          Projects
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-chevron-right"></span>
+</span>
+</a>
+
+        <a href="mailto:ha_sg@outlook.com" role="listitem" class="relative flex gap-4 overflow-hidden px-4 pp-motion-effects-fast min-h-14 items-center py-2 cursor-pointer pp-state-layer pp-focus-ring text-pp-on-surface relative overflow-hidden" aria-disabled="false" data-pp-component="list-item" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="min-w-0 flex-1">
+  <span class="block truncate pp-body-large">
+    
+          Contact
+          
+  </span>
+  
+</span>
+<span class="flex shrink-0 items-center pp-label-small text-pp-on-surface-variant">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-envelope"></span>
+</span>
+</a>
+
+      
+</div>
+      <hr data-pp-component="divider" class="border-t border-pp-outline-variant my-2">
+      <div class="flex items-center justify-between px-4 py-2">
+        <span class="pp-body-large text-pp-on-surface-variant" data-pp-component="typography">
+          Theme
+        </span>
+        <div data-pp-component="theme-toggle" data-pp-target="html" class="inline-flex items-center gap-2">
+  <div role="group" aria-label="Theme" class="relative inline-flex shrink-0 items-center rounded-pp-full border border-pp-outline-variant p-0.5">
+    <span aria-hidden="true" class="pointer-events-none absolute start-0.5 top-0.5 size-8 rounded-pp-full bg-pp-secondary-container pp-motion-spatial-default [[data-theme=light]_&amp;]:translate-x-8 [[data-theme=dark]_&amp;]:translate-x-16"></span>
+    <button type="button" aria-label="System theme" title="System theme" data-pp-theme="system" phx-value-theme="system" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;system&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-secondary-container pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-surface-variant [[data-theme=dark]_&amp;]:text-pp-on-surface-variant">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-computer-desktop-micro"></span>
+    </button><button type="button" aria-label="Light theme" title="Light theme" data-pp-theme="light" phx-value-theme="light" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;light&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-sun-micro"></span>
+    </button><button type="button" aria-label="Dark theme" title="Dark theme" data-pp-theme="dark" phx-value-theme="dark" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;dark&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=dark]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-moon-micro"></span>
+    </button>
+  </div>
+  
+</div>
+      </div>
+    
+</div>
+
+    </div>
+  
+  <div id="mobile-nav-container-end" tabindex="0" aria-hidden="true"></div>
+</div>
+</div>
+
+    <main id="top">
+      <section id="hero" class="relative overflow-hidden">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+  <div class="relative mx-auto grid max-w-6xl gap-14 px-6 pt-14 pb-20 sm:pt-20 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:pb-28 [&>*]:min-w-0">
+    <div>
+      <a href="https://guiltty.dev" target="_blank" rel="noopener" class="hero-pill pp-label-large" id="hero-release">
+        <span class="shrink-0 rounded-pp-full bg-pp-primary px-2 py-0.5 text-pp-on-primary pp-label-medium">
+          New
+        </span>
+        <span class="truncate">guiltty: a GPU terminal in Elixir and C</span>
+        <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-arrow-right-micro size-4 shrink-0"></span>
+      </a>
+
+      <div class="mt-8 flex items-center gap-4">
+        <img src="/images/hs.jpg" alt="Héctor Salinas" class="hero-avatar size-16 sm:size-20">
+        <div>
+          <p class="pp-title-large">Héctor Salinas</p>
+          <p class="pp-body-medium text-pp-on-surface-variant flex items-center gap-1">
+            <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-map-pin-micro size-4"></span> Monterrey, México
+          </p>
+        </div>
+      </div>
+
+      <h1 class="hero-title mt-8 text-balance">
+        Staff Platform Engineer.<br>
+        <span class="hero-title-accent">OpenShift &amp; Linux at scale.</span>
       </h1>
-      <p class="text-base-content/60 text-lg font-medium">
-        Staff Platform Engineer · Monterrey, México
+
+      <p class="pp-body-large sm:text-xl! sm:leading-8! mt-6 max-w-xl text-pp-on-surface-variant text-pretty">
+        10+ years across enterprise Linux, Kubernetes/OpenShift, VMware and software engineering.
+        I build hybrid cloud platforms, migrate VMware estates into OpenShift Virtualization, and
+        write open source in Elixir and C.
       </p>
-    </div>
-    <div class="text-rotate relative w-full max-w-2xl mx-auto min-h-32 text-2xl sm:text-3xl font-semibold leading-tight text-base-content/85">
-      <span>OPENSHIFT &amp; KUBERNETES ARCHITECTURE</span>
-      <span>HYBRID CLOUD &amp; VMWARE MIGRATION</span>
-      <span>ENTERPRISE LINUX AT SCALE</span>
-      <span>INFRASTRUCTURE AUTOMATION</span>
-    </div>
-    <div class="flex flex-wrap gap-3 justify-center pt-2">
-      <a href="mailto:ha_sg@outlook.com" class="btn btn-lg btn-primary font-bold">
-        Get in touch
-      </a>
-      <a href="https://github.com/z7ealth" target="_blank" class="btn btn-lg btn-outline btn-secondary font-bold">
-        View GitHub
-      </a>
-    </div>
-  </div>
+
+      <div role="group" data-pp-component="button-group" data-pp-variant="standard" class="pp-button-group-standard [--pp-group-outer:28px] [--pp-group-inner:8px] [--pp-group-pressed:4px] [--pp-group-pad:24px] gap-2 mt-10 flex-wrap">
+  
+        <a href="mailto:ha_sg@outlook.com" id="cta-contact" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-14 gap-2 px-6 pp-title-medium [&amp;_[data-pp-component=icon]]:size-6 rounded-[28px] active:rounded-pp-md bg-pp-primary text-pp-on-primary hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden" data-pp-component="button" data-pp-size="md" data-pp-variant="filled" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-6 hero-envelope"></span>
+</span>
+
+          Get in touch
+        
+
+</a>
+
+        <a href="https://github.com/z7ealth" id="cta-github" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-14 gap-2 px-6 pp-title-medium [&amp;_[data-pp-component=icon]]:size-6 rounded-[28px] active:rounded-pp-md border border-pp-outline-variant text-pp-primary disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="md" data-pp-variant="outlined" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          View GitHub
+        
+
+</a>
+
+      
 </div>
+    </div>
 
-  <div id="about" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>About me
-</h2>
-    <p class="text-xl text-justify">I&#39;m a Staff Platform Engineer with 10+ years across enterprise Linux, Kubernetes/OpenShift, VMware virtualization, and software engineering. I specialize in hybrid cloud platforms, OpenShift Virtualization, infrastructure automation, and troubleshooting complex enterprise environments at scale.
-        I lead modernization initiatives, enterprise Linux operations, and VMware-to-Kubernetes migrations, and collaborate regularly with Red Hat TAMs, architects, and support engineering on critical infrastructure escalations.</p>
+    <div class="hero-term-wrap">
+      <div id="hero-terminal" class="term hero-term">
+  <div class="term-titlebar">
+    <svg viewBox="0 0 64 64" fill="none" class="term-app-icon" aria-hidden="true" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 18L8 46"></path>
+  <path d="M17 18L31 32L17 46"></path>
+  <path d="M42 46L56 46"></path>
+</svg>
+    <span class="term-title">hector@z7ealth:~</span>
+    <span class="term-controls" aria-hidden="true">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-chevron-up-micro size-3.5"></span>
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-minus-micro size-3.5"></span>
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-stop-micro size-3"></span>
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-x-mark-micro size-3.5"></span>
+    </span>
   </div>
-
-  <div id="experience" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>Experience
-</h2>
-    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-  <li>
-    <div class="timeline-middle text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <div class="timeline-start mb-10 md:text-end">
-      <time class="font-mono italic text-primary">2025 – Present</time>
-      <div class="text-lg font-black">OpenShift Architect / Platform Engineer</div>
-      <div class="font-semibold opacity-70 pb-1">OXXO</div>
-      Designed and implemented enterprise OpenShift infrastructure across Monterrey and Querétaro data
-      centers. Led the migration of 120+ VMware virtual machines into OpenShift Virtualization, built a
-      custom Forklift controller image to unblock production ahead of an official upstream fix, and
-      implemented Dell PowerMax CSI integration later referenced by Dell engineering teams.
-    </div>
-    <hr>
-  </li>
-  <li>
-    <hr>
-    <div class="timeline-middle text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <div class="timeline-end md:mb-10">
-      <time class="font-mono italic text-primary">2025 – Present (concurrent)</time>
-      <div class="text-lg font-black">Linux Platform Manager</div>
-      <div class="font-semibold opacity-70 pb-1">The Home Depot México</div>
-      Lead enterprise Linux platform operations and governance across critical production infrastructure.
-      Implemented Red Hat Satellite 6.16 for centralized patch management and content lifecycle, and manage
-      Red Hat IdM, Ansible automation, Linux hardening, and RHEL upgrade programs.
-    </div>
-    <hr>
-  </li>
-  <li>
-    <hr>
-    <div class="timeline-middle text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <div class="timeline-start mb-10 md:text-end">
-      <time class="font-mono italic text-primary">2022 – 2024</time>
-      <div class="text-lg font-black">Cloud Architect</div>
-      <div class="font-semibold opacity-70 pb-1">OXXO</div>
-      Designed cloud architectures for enterprise modernization initiatives and led the technical migration of
-      Java monolith applications toward cloud-native microservices, partnering with development and
-      infrastructure teams on architecture and governance.
-    </div>
-    <hr>
-  </li>
-  <li>
-    <hr>
-    <div class="timeline-middle text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <div class="timeline-end md:mb-10">
-      <time class="font-mono italic text-primary">2021 – 2022</time>
-      <div class="text-lg font-black">Linux System Administrator</div>
-      <div class="font-semibold opacity-70 pb-1">The Home Depot México</div>
-      Administered Red Hat Enterprise Linux environments supporting enterprise production workloads,
-      resolving infrastructure incidents and handling OS maintenance, patching, and troubleshooting.
-    </div>
-    <hr>
-  </li>
-  <li>
-    <hr>
-    <div class="timeline-middle text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <div class="timeline-start mb-10 md:text-end">
-      <time class="font-mono italic text-primary">2016 – 2021</time>
-      <div class="text-lg font-black">Software Engineering Background</div>
-      <div class="font-semibold opacity-70 pb-1">
-        Daltum Systems · Inmar Winston Data · Osiris HealthTech Systems · Concéntrico · NHPSoft
+  <div class="term-body">
+        <div class="term-line"><span class="t-cyan">hector</span><span class="t-dim">@</span><span class="t-blue">z7ealth</span> <span class="t-magenta">~</span> <span class="t-green">❯</span> whoami</div><div class="term-line"><b>Héctor Salinas</b> <span class="t-dim">· Staff Platform Engineer</span></div><div class="term-line"><span class="t-cyan">hector</span><span class="t-dim">@</span><span class="t-blue">z7ealth</span> <span class="t-magenta">~</span> <span class="t-green">❯</span> oc get focus</div><div class="term-line"><span class="t-dim">NAME                          READY   STATUS</span></div><div class="term-line">openshift-virtualization      1/1     <span class="t-green">Running</span></div><div class="term-line">vmware-to-kubernetes          1/1     <span class="t-green">Running</span></div><div class="term-line">enterprise-linux              1/1     <span class="t-green">Running</span></div><div class="term-line">infrastructure-automation     1/1     <span class="t-green">Running</span></div><div class="term-line"><span class="t-cyan">hector</span><span class="t-dim">@</span><span class="t-blue">z7ealth</span> <span class="t-magenta">~</span> <span class="t-green">❯</span> ls ~/oss</div><div class="term-line"><span class="t-blue">guiltty</span>  <span class="t-blue">phoenix_paper</span>  <span class="t-blue">kubevirt-tools</span>  <span class="t-blue">extop</span>  <span class="t-blue">exkl</span></div><div class="term-line"><span class="t-cyan">hector</span><span class="t-dim">@</span><span class="t-blue">z7ealth</span> <span class="t-magenta">~</span> <span class="t-green">❯</span> <span class="t-cursor"></span></div>
       </div>
-      Full stack and backend development roles building web applications, prior to moving into platform and
-      infrastructure engineering.
-    </div>
-  </li>
-</ul>
+  <div class="term-tabs" aria-hidden="true">
+    <span class="term-tab ">
+      ~/oss/guiltty
+    </span><span class="term-tab ">
+      oc login
+    </span><span class="term-tab is-active">
+      hector@z7ealth:~
+    </span>
   </div>
+</div>
+    </div>
+  </div>
+</section>
 
-  <div class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>Focus Areas
-</h2>
-    <ul class="list bg-base-200/60 rounded-box border border-base-300 p-6 sm:p-12">
-  <li class="list-row">
-    <div class="text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25m0-9L3 7.5m9 5.25v9M3 7.5v9l9 5.25"></path>
-      </svg>
-    </div>
-    <div>
-      <div class="text-xl font-semibold">Platform Engineering</div>
-      <div class="text-lg uppercase font-semibold opacity-60">
-        OpenShift, Kubernetes &amp; Hybrid Cloud
-      </div>
-    </div>
-    <p class="list-col-wrap text-lg text-justify">
-      I design and operate enterprise OpenShift and Kubernetes platforms, including KubeVirt/OpenShift
-      Virtualization, large-scale VMware-to-Kubernetes migrations, and storage integrations. I act as the
-      technical escalation point for complex platform issues, working directly with Red Hat TAMs and support
-      engineering.
-    </p>
-  </li>
 
-  <li class="list-row">
-    <div class="text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"></path>
-      </svg>
+<section class="border-y border-pp-outline-variant bg-pp-surface-container-low">
+  <dl class="mx-auto grid max-w-6xl grid-cols-2 gap-px px-6 md:grid-cols-4">
+    <div class="py-8 text-center">
+      <dt class="sr-only">years in infrastructure &amp; software</dt>
+      <dd class="pp-display-small-emphasized text-pp-primary">10+</dd>
+      <dd class="pp-body-medium mt-1 text-pp-on-surface-variant">years in infrastructure &amp; software</dd>
+    </div><div class="py-8 text-center">
+      <dt class="sr-only">VMs moved to OpenShift Virtualization</dt>
+      <dd class="pp-display-small-emphasized text-pp-primary">120+</dd>
+      <dd class="pp-body-medium mt-1 text-pp-on-surface-variant">VMs moved to OpenShift Virtualization</dd>
+    </div><div class="py-8 text-center">
+      <dt class="sr-only">industry certifications</dt>
+      <dd class="pp-display-small-emphasized text-pp-primary">8</dd>
+      <dd class="pp-body-medium mt-1 text-pp-on-surface-variant">industry certifications</dd>
+    </div><div class="py-8 text-center">
+      <dt class="sr-only">open-source projects</dt>
+      <dd class="pp-display-small-emphasized text-pp-primary">5</dd>
+      <dd class="pp-body-medium mt-1 text-pp-on-surface-variant">open-source projects</dd>
     </div>
-    <div>
-      <div class="text-xl font-semibold">Enterprise Linux Operations</div>
-      <div class="text-lg uppercase font-semibold opacity-60">
-        RHEL, Governance &amp; Hardening at Scale
-      </div>
-    </div>
-    <p class="list-col-wrap text-lg text-justify">
-      I lead enterprise Linux platform operations across critical production infrastructure: centralized patch
-      management with Red Hat Satellite, identity management with Red Hat IdM, SELinux and system hardening,
-      and RHEL upgrade programs at scale.
-    </p>
-  </li>
+  </dl>
+</section>
 
-  <li class="list-row">
-    <div class="text-primary">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 rounded-box">
-        <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"></path>
-      </svg>
-    </div>
-    <div>
-      <div class="text-xl font-semibold">Automation &amp; Software Engineering</div>
-      <div class="text-lg uppercase font-semibold opacity-60">
-        IaC, CI/CD &amp; Full-Stack Development
-      </div>
-    </div>
-    <p class="list-col-wrap text-lg text-justify">
-      I automate infrastructure and deployment workflows with Ansible and codify operational practices to make
-      environments repeatable and reliable. My software engineering background in Elixir/Phoenix, Go, and
-      TypeScript keeps me close to the developer experience side of the platforms I build.
-    </p>
-  </li>
-</ul>
-  </div>
 
-  <div id="skills" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>Technical Skills
-</h2>
-    <div class="grid gap-4 sm:grid-cols-2">
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Platform &amp; Orchestration</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        OpenShift
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Kubernetes
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        KubeVirt
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        OpenShift Virtualization
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Forklift/MTV
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Operators
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Helm
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Kustomize
-      </span>
-    </div>
-  </div>
-</div>
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Enterprise Linux</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        RHEL 7/8/9
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Red Hat Satellite
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Red Hat IdM
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Ansible
-      </span>
-    </div>
-  </div>
-</div>
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Virtualization &amp; Infrastructure</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        VMware vSphere 8
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Tanzu
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Microsoft Azure
-      </span>
-    </div>
-  </div>
-</div>
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Storage &amp; Data</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        OpenShift Data Foundation (Ceph)
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Dell PowerMax CSI
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        CDI / StorageProfiles
-      </span>
-    </div>
-  </div>
-</div>
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Observability &amp; Reliability</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Prometheus
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Alertmanager
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Grafana
-      </span>
-    </div>
-  </div>
-</div>
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-  <div class="card-body gap-3 p-6">
-    <h3 class="card-title text-base-content text-lg">Development</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Elixir / Phoenix
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Go
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        TypeScript
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        JavaScript
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Node.js
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        React
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Vue.js
-      </span><span class="badge badge-lg badge-outline border-base-300 text-base-content/80">
-        Bash
-      </span>
-    </div>
-  </div>
-</div>
-</div>
-  </div>
-
-  <div id="certifications" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>Certifications
-</h2>
-    <div class="flex flex-col gap-6">
-  <ul class="grid gap-3 sm:grid-cols-2">
-    <li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">Red Hat Certified System Administrator (RHCSA, EX200)</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2026</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">Red Hat Certified System Administrator in OpenShift (EX280)</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2026</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">CNCF Certified Kubernetes Administrator (CKA)</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">Microsoft Certified: Azure Administrator Associate (AZ-104)</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">VMware Certified Master Specialist — Cloud Native</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2024</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">VMware Certified Professional — Data Center Virtualization</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">VMware Certified Professional — Application Modernization</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
-    </li><li class="flex items-center gap-3 bg-base-200/60 border border-base-300 rounded-box px-4 py-3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6 shrink-0 text-primary">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-      <span class="text-lg leading-snug">VMware vSphere with Tanzu Specialist</span>
-      <span class="badge badge-primary badge-outline ml-auto shrink-0">2022</span>
-    </li>
-  </ul>
-  <p class="text-xl">
-    Verified credentials are available on
-    <a href="https://www.credly.com/users/z7ealth" target="_blank" class="text-primary underline">Credly</a>.
+<section id="about" class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+  <div class="max-w-2xl ">
+  <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+    About me
+  </p>
+  <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+    Platforms that hold up under real load.
+  </h2>
+  <p class="pp-body-large text-pp-on-surface-variant mt-4 text-pretty" data-pp-component="typography">
+    
+    I lead modernization initiatives, enterprise Linux operations and VMware-to-Kubernetes
+    migrations, and work regularly with Red Hat TAMs, architects and support engineering on
+    critical infrastructure escalations. When something deep in the stack breaks, I'm usually
+    the one reading the source to find out why.
+  
   </p>
 </div>
-  </div>
 
-  <div id="projects" class="w-full max-w-4xl flex flex-col gap-2 scroll-mt-24">
-    <h2 class="font-semibold text-xl uppercase text-primary tracking-wide py-4">
-  <span class="text-base-content/30 pr-2">#</span>Open Source &amp; Personal Projects
-</h2>
-    <div class="grid gap-4 sm:grid-cols-3">
-  <div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-    <div class="card-body gap-2 p-6">
-      <h3 class="card-title text-base-content">kubevirt-tools</h3>
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">RVTools-inspired inventory for KubeVirt</p>
-      <p class="text-base text-justify text-base-content/80">Open-source utility for KubeVirt / OpenShift Virtualization environments, focused on inventory, visibility, and assessment of Kubernetes-native virtualization platforms.</p>
-      <div class="card-actions pt-2 gap-4">
-        
-        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
-          View on GitHub ↗
-        </a>
+  <div class="bento mt-14">
+    <div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="feature-icon">
+        <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-cube-transparent size-6"></span>
       </div>
-    </div>
-  </div><div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-    <div class="card-body gap-2 p-6">
-      <h3 class="card-title text-base-content">extop</h3>
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">Elixir/BEAM terminal system monitor</p>
-      <p class="text-base text-justify text-base-content/80">Terminal system monitor for Linux written in Elixir, in the spirit of btop. Built on the BEAM with a ratatui-based TUI.</p>
-      <div class="card-actions pt-2 gap-4">
-        
-        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
-          View on GitHub ↗
-        </a>
-      </div>
-    </div>
-  </div><div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-    <div class="card-body gap-2 p-6">
-      <h3 class="card-title text-base-content">EXKL</h3>
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">Open Linux service for DeepCool AK coolers</p>
-      <p class="text-base text-justify text-base-content/80">Open-source Linux alternative to DeepCool&#39;s proprietary control software, enabling monitoring and display support for AK-series digital coolers. Built with Elixir, Phoenix, and LiveView.</p>
-      <div class="card-actions pt-2 gap-4">
-        
-        <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
-          View on GitHub ↗
-        </a>
-      </div>
-    </div>
-  </div><div class="card bg-base-200/60 border border-base-300 hover:border-primary/50 transition-colors">
-    <div class="card-body gap-2 p-6">
-      <h3 class="card-title text-base-content">PhoenixPaper</h3>
-      <p class="text-sm font-semibold uppercase tracking-wide text-primary/80">Material Design components for Phoenix</p>
-      <p class="text-base text-justify text-base-content/80">A Material Design component library for Phoenix, in the spirit of ember-paper, styled with Tailwind CSS. Includes a live component catalog and LiveView-ready UI elements.</p>
-      <div class="card-actions pt-2 gap-4">
-        <a href="https://phoenixpaper.dev" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
-          Visit Site ↗
-        </a>
-        <a href="https://github.com/z7ealth/phoenix_paper" target="_blank" rel="noopener noreferrer" class="link link-primary text-sm font-semibold">
-          View on GitHub ↗
-        </a>
-      </div>
-    </div>
+      <h3 class="pp-title-large mt-5">Platform Engineering</h3>
+      <p class="pp-label-large mt-1 text-pp-primary">OpenShift, Kubernetes &amp; hybrid cloud</p>
+      <p class="pp-body-medium mt-3 text-pp-on-surface-variant">I design and operate enterprise OpenShift and Kubernetes platforms, including KubeVirt/OpenShift Virtualization, large-scale VMware-to-Kubernetes migrations, and storage integrations. I&#39;m the escalation point for complex platform issues, working directly with Red Hat TAMs and support engineering.</p>
+    
+    
   </div>
 </div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="feature-icon">
+        <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-server-stack size-6"></span>
+      </div>
+      <h3 class="pp-title-large mt-5">Enterprise Linux Operations</h3>
+      <p class="pp-label-large mt-1 text-pp-primary">RHEL, governance &amp; hardening at scale</p>
+      <p class="pp-body-medium mt-3 text-pp-on-surface-variant">I lead enterprise Linux operations across critical production infrastructure: centralized patch management with Red Hat Satellite, identity with Red Hat IdM, SELinux and system hardening, and RHEL upgrade programs at scale.</p>
+    
+    
   </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="feature-icon">
+        <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-command-line size-6"></span>
+      </div>
+      <h3 class="pp-title-large mt-5">Automation &amp; Software</h3>
+      <p class="pp-label-large mt-1 text-pp-primary">IaC, CI/CD &amp; full-stack development</p>
+      <p class="pp-body-medium mt-3 text-pp-on-surface-variant">I automate infrastructure with Ansible and codify operational practice so environments are repeatable. A software background in Elixir/Phoenix, Go and TypeScript keeps me close to the developer experience of the platforms I build.</p>
+    
+    
+  </div>
+</div>
 
+  </div>
+</section>
+
+
+<section id="experience" class="border-y border-pp-outline-variant bg-pp-surface-container-lowest">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-24 sm:py-32 lg:grid-cols-[1fr_1.5fr] lg:items-start [&>*]:min-w-0">
+    <div class="lg:sticky lg:top-28">
+      <div class="max-w-2xl ">
+  <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+    Experience
+  </p>
+  <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+    From sysadmin to platform architect.
+  </h2>
+  <p class="pp-body-large text-pp-on-surface-variant mt-4 text-pretty" data-pp-component="typography">
+    
+        Five years writing software, then the move into infrastructure: Linux first, then cloud,
+        then OpenShift at enterprise scale.
+      
+  </p>
+</div>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline-item is-current">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <p class="pp-label-large text-pp-primary">2025 – Present</p>
+          <h3 class="pp-title-large mt-1">OpenShift Architect / Platform Engineer</h3>
+          <p class="pp-title-small text-pp-on-surface-variant">OXXO</p>
+          <p class="pp-body-medium mt-3 text-pp-on-surface-variant">Designed and implemented enterprise OpenShift infrastructure across the Monterrey and Querétaro data centers. Led the migration of 120+ VMware virtual machines into OpenShift Virtualization, built a custom Forklift controller image to unblock production ahead of an official upstream fix, and implemented the Dell PowerMax CSI integration later referenced by Dell engineering teams.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift Virtualization</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Forklift/MTV</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Dell PowerMax CSI</span>
+
+</div>
+          </div>
+        
+    
+  </div>
+</div>
+
+      </li><li class="timeline-item is-current">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <p class="pp-label-large text-pp-primary">2025 – Present · concurrent</p>
+          <h3 class="pp-title-large mt-1">Linux Platform Manager</h3>
+          <p class="pp-title-small text-pp-on-surface-variant">The Home Depot México</p>
+          <p class="pp-body-medium mt-3 text-pp-on-surface-variant">Lead enterprise Linux platform operations and governance across critical production infrastructure. Implemented Red Hat Satellite 6.16 for centralized patch management and content lifecycle, and manage Red Hat IdM, Ansible automation, Linux hardening, and RHEL upgrade programs.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">RHEL</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Satellite 6.16</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Red Hat IdM</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Ansible</span>
+
+</div>
+          </div>
+        
+    
+  </div>
+</div>
+
+      </li><li class="timeline-item ">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <p class="pp-label-large text-pp-primary">2022 – 2024</p>
+          <h3 class="pp-title-large mt-1">Cloud Architect</h3>
+          <p class="pp-title-small text-pp-on-surface-variant">OXXO</p>
+          <p class="pp-body-medium mt-3 text-pp-on-surface-variant">Designed cloud architectures for enterprise modernization initiatives and led the technical migration of Java monoliths toward cloud-native microservices, partnering with development and infrastructure teams on architecture and governance.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Azure</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Tanzu</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Microservices</span>
+
+</div>
+          </div>
+        
+    
+  </div>
+</div>
+
+      </li><li class="timeline-item ">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <p class="pp-label-large text-pp-primary">2021 – 2022</p>
+          <h3 class="pp-title-large mt-1">Linux System Administrator</h3>
+          <p class="pp-title-small text-pp-on-surface-variant">The Home Depot México</p>
+          <p class="pp-body-medium mt-3 text-pp-on-surface-variant">Administered Red Hat Enterprise Linux environments supporting enterprise production workloads, resolving infrastructure incidents and handling OS maintenance, patching, and troubleshooting.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">RHEL</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Patching</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Troubleshooting</span>
+
+</div>
+          </div>
+        
+    
+  </div>
+</div>
+
+      </li><li class="timeline-item ">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <p class="pp-label-large text-pp-primary">2016 – 2021</p>
+          <h3 class="pp-title-large mt-1">Software Engineering</h3>
+          <p class="pp-title-small text-pp-on-surface-variant">Daltum Systems · Inmar Winston Data · Osiris HealthTech Systems · Concéntrico · NHPSoft</p>
+          <p class="pp-body-medium mt-3 text-pp-on-surface-variant">Full-stack and backend development roles building web applications, before moving into platform and infrastructure engineering.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Full stack</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Backend</span>
+
+</div>
+          </div>
+        
+    
+  </div>
+</div>
+
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section id="skills" class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+  <div class="max-w-2xl ">
+  <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+    Technical skills
+  </p>
+  <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+    The stack I work in every day.
+  </h2>
+  <p class="pp-body-large text-pp-on-surface-variant mt-4 text-pretty" data-pp-component="typography">
+    
+    From bare metal and hypervisors up through Kubernetes operators to the application code
+    running on top.
+  
+  </p>
+</div>
+
+  <div class="bento mt-14">
+    <div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-cube size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Platform &amp; Orchestration</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Kubernetes</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">KubeVirt</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift Virtualization</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Forklift/MTV</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Operators</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Helm</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Kustomize</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-server size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Enterprise Linux</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">RHEL 7/8/9</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Red Hat Satellite</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Red Hat IdM</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Ansible</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-cloud size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Virtualization &amp; Infrastructure</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">VMware vSphere 8</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Tanzu</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Microsoft Azure</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-circle-stack size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Storage &amp; Data</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift Data Foundation (Ceph)</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Dell PowerMax CSI</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">CDI / StorageProfiles</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-chart-bar size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Observability &amp; Reliability</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Prometheus</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Alertmanager</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Grafana</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+      <div class="flex items-center gap-4">
+        <div class="feature-icon">
+          <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-code-bracket size-6"></span>
+        </div>
+        <h3 class="pp-title-large">Development</h3>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Elixir / Phoenix</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Go</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">C</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">TypeScript</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">JavaScript</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Node.js</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">React</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Vue.js</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Bash</span>
+
+</div>
+      </div>
+    
+    
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<section id="certifications" class="border-y border-pp-outline-variant bg-pp-surface-container-lowest">
+  <div class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl ">
+  <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+    Certifications
+  </p>
+  <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+    Verified, not just claimed.
+  </h2>
+  
+</div>
+      <a href="https://www.credly.com/users/z7ealth" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm bg-pp-secondary-container text-pp-on-secondary-container hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden shrink-0 self-start md:self-auto" data-pp-component="button" data-pp-size="sm" data-pp-variant="tonal" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-6 hero-check-badge"></span>
+</span>
+
+        Verify on Credly
+      
+
+</a>
+
+    </div>
+
+    <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2026
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            Red Hat
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">Red Hat Certified System Administrator</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">RHCSA · EX200</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2026
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            Red Hat
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">Red Hat Certified OpenShift Administrator</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">EX280</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2024
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            CNCF
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">Certified Kubernetes Administrator</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">CKA</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2024
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            Microsoft
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">Azure Administrator Associate</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">AZ-104</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2024
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            VMware
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">VMware Certified Master Specialist</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">Cloud Native</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2022
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            VMware
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">VMware Certified Professional</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">Data Center Virtualization</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2022
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            VMware
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">VMware Certified Professional</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">Application Modernization</p>
+        
+    
+  </div>
+</div>
+
+      </li><li>
+        <div data-pp-component="card" class="flex flex-col rounded-pp-md border border-pp-outline-variant bg-pp-surface text-pp-on-surface feature-card">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0">
+    
+    
+          <div class="flex items-start justify-between gap-3">
+            <div class="feature-icon">
+              <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-check-badge size-6"></span>
+            </div>
+            <span class="rounded-pp-full bg-pp-secondary-container px-2.5 py-0.5 text-pp-on-secondary-container pp-label-medium">
+              2022
+            </span>
+          </div>
+          <p class="pp-label-medium mt-5 uppercase tracking-widest text-pp-on-surface-variant">
+            VMware
+          </p>
+          <h3 class="pp-title-medium mt-1 text-balance">VMware vSphere with Tanzu Specialist</h3>
+          <p class="pp-body-medium mt-1 text-pp-primary">Tanzu</p>
+        
+    
+  </div>
+</div>
+
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="projects" class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+  <div class="max-w-2xl ">
+  <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+    Open source &amp; personal projects
+  </p>
+  <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+    Things I build after hours.
+  </h2>
+  <p class="pp-body-large text-pp-on-surface-variant mt-4 text-pretty" data-pp-component="typography">
+    
+    Mostly Elixir, sometimes C: tools for the platforms I run at work, and a few that exist
+    because I wanted to see if the BEAM could do it.
+  
+  </p>
+</div>
+
+  <div class="bento mt-14">
+    <div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card bento-wide" id="project-guiltty">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0 flex h-full flex-col">
+    
+    
+      <div class="flex items-center gap-4">
+        <span class="project-mark">
+          
+            <img src="/images/projects/guiltty.svg" alt="" class="size-7">
+          
+        </span>
+        <div class="min-w-0">
+          <h3 class="pp-headline-small">
+            guiltty
+          </h3>
+          <p class="pp-label-large text-pp-primary">A GPU-accelerated terminal emulator in Elixir and C</p>
+        </div>
+      </div>
+      <p class="pp-body-medium mt-4 text-pp-on-surface-variant">Every tab is a supervised process tree and the renderer is its own OS process, so when a part crashes its supervisor restarts it and your tabs stay. Vulkan 1.3 with an OpenGL fallback, lockable tabs, safe broadcast input, ligatures and color emoji, and a live config written in plain Elixir.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Elixir</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">C</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Vulkan</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenGL</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Linux</span>
+
+</div>
+      </div>
+      <div class="mt-auto flex flex-wrap gap-2 pt-6">
+        <a href="https://guiltty.dev" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm bg-pp-secondary-container text-pp-on-secondary-container hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="tonal" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-6 hero-globe-alt"></span>
+</span>
+
+          guiltty.dev
+        
+
+</a>
+
+        <a href="https://github.com/z7ealth/guiltty" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-primary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-4.5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          Source
+        
+
+</a>
+
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card" id="project-phoenixpaper">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0 flex h-full flex-col">
+    
+    
+      <div class="flex items-center gap-4">
+        <span class="project-mark">
+          
+            <img src="/images/projects/phoenixpaper.svg" alt="" class="size-7">
+          
+        </span>
+        <div class="min-w-0">
+          <h3 class="pp-title-large">
+            PhoenixPaper
+          </h3>
+          <p class="pp-label-large text-pp-primary">Material Design 3 for Phoenix</p>
+        </div>
+      </div>
+      <p class="pp-body-medium mt-4 text-pp-on-surface-variant">A Material Design 3 (and M3 Expressive) component library for Phoenix and LiveView, in the spirit of ember-paper, styled with Tailwind CSS. This site is built with it.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Elixir</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Phoenix</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">LiveView</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Tailwind</span>
+
+</div>
+      </div>
+      <div class="mt-auto flex flex-wrap gap-2 pt-6">
+        <a href="https://phoenixpaper.dev" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm bg-pp-secondary-container text-pp-on-secondary-container hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="tonal" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-6 hero-globe-alt"></span>
+</span>
+
+          phoenixpaper.dev
+        
+
+</a>
+
+        <a href="https://github.com/z7ealth/phoenix_paper" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-primary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-4.5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          Source
+        
+
+</a>
+
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card" id="project-kubevirt-tools">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0 flex h-full flex-col">
+    
+    
+      <div class="flex items-center gap-4">
+        <span class="project-mark">
+          
+            <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-squares-2x2 size-6"></span>
+          
+        </span>
+        <div class="min-w-0">
+          <h3 class="pp-title-large">
+            kubevirt-tools
+          </h3>
+          <p class="pp-label-large text-pp-primary">RVTools-inspired inventory for KubeVirt</p>
+        </div>
+      </div>
+      <p class="pp-body-medium mt-4 text-pp-on-surface-variant">Inventory, visibility and assessment for KubeVirt / OpenShift Virtualization environments: the RVTools experience for Kubernetes-native virtualization.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">KubeVirt</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">OpenShift</span>
+
+</div>
+      </div>
+      <div class="mt-auto flex flex-wrap gap-2 pt-6">
+        
+        <a href="https://github.com/z7ealth" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-primary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-4.5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          Source
+        
+
+</a>
+
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card" id="project-extop">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0 flex h-full flex-col">
+    
+    
+      <div class="flex items-center gap-4">
+        <span class="project-mark">
+          
+            <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-cpu-chip size-6"></span>
+          
+        </span>
+        <div class="min-w-0">
+          <h3 class="pp-title-large">
+            extop
+          </h3>
+          <p class="pp-label-large text-pp-primary">A terminal system monitor on the BEAM</p>
+        </div>
+      </div>
+      <p class="pp-body-medium mt-4 text-pp-on-surface-variant">A system monitor for Linux written in Elixir, in the spirit of btop, with a ratatui-based TUI.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Elixir</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">TUI</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Linux</span>
+
+</div>
+      </div>
+      <div class="mt-auto flex flex-wrap gap-2 pt-6">
+        
+        <a href="https://github.com/z7ealth/extop" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-primary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-4.5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          Source
+        
+
+</a>
+
+      </div>
+    
+    
+  </div>
+</div>
+<div data-pp-component="card" class="flex flex-col rounded-pp-md bg-pp-surface-container-highest text-pp-on-surface feature-card" id="project-exkl">
+  
+  <div class="flex-1 p-4 [&amp;&gt;[data-pp-component=list]]:-mx-4 [&amp;&gt;[data-pp-component=list]]:py-0 flex h-full flex-col">
+    
+    
+      <div class="flex items-center gap-4">
+        <span class="project-mark">
+          
+            <span data-pp-component="icon" class="inline-block align-[-0.125em] hero-fire size-6"></span>
+          
+        </span>
+        <div class="min-w-0">
+          <h3 class="pp-title-large">
+            EXKL
+          </h3>
+          <p class="pp-label-large text-pp-primary">An open Linux service for DeepCool AK coolers</p>
+        </div>
+      </div>
+      <p class="pp-body-medium mt-4 text-pp-on-surface-variant">An open-source Linux alternative to DeepCool&#39;s proprietary software, with monitoring and display support for AK-series digital coolers. Built with Elixir, Phoenix and LiveView.</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Elixir</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">Phoenix</span>
+
+</div>
+<div data-pp-component="chip" data-pp-variant="input" class="relative inline-flex h-8 max-w-full items-center gap-2 overflow-hidden rounded-pp-sm px-4 pp-label-large select-none pp-motion-effects-fast border border-pp-outline-variant text-pp-on-surface-variant disabled:pointer-events-none disabled:border-pp-on-surface/12 disabled:text-pp-on-surface/38 aria-disabled:pointer-events-none aria-disabled:border-pp-on-surface/12 aria-disabled:text-pp-on-surface/38">
+  
+
+<span class="truncate">LiveView</span>
+
+</div>
+      </div>
+      <div class="mt-auto flex flex-wrap gap-2 pt-6">
+        
+        <a href="https://github.com/z7ealth/exkl" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-10 gap-2 px-4 pp-label-large [&amp;_[data-pp-component=icon]]:size-5 rounded-[20px] active:rounded-pp-sm text-pp-primary disabled:text-pp-on-surface/38 aria-disabled:text-pp-on-surface/38 relative overflow-hidden" data-pp-component="button" data-pp-size="sm" data-pp-variant="text" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="size-4.5" aria-hidden="true">
+  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"></path>
+</svg>
+</span>
+
+          Source
+        
+
+</a>
+
+      </div>
+    
+    
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<section id="contact" class="mx-auto max-w-6xl px-6 pb-24 sm:pb-32">
+  <div class="contact-panel px-6 py-14 sm:px-14 sm:py-16 text-center">
+    <p class="pp-label-large text-pp-primary uppercase tracking-[0.2em]" data-pp-component="typography">
+      Contact
+    </p>
+    <h2 class="pp-display-small-emphasized mt-3 text-balance" data-pp-component="typography">
+      Have a platform that needs untangling?
+    </h2>
+    <p class="pp-body-large text-pp-on-surface-variant mx-auto mt-4 max-w-xl text-pretty" data-pp-component="typography">
+      OpenShift, virtualization migrations, enterprise Linux or Elixir: I'm happy to talk.
+    </p>
+    <div role="group" data-pp-component="button-group" data-pp-variant="standard" class="pp-button-group-standard [--pp-group-outer:28px] [--pp-group-inner:8px] [--pp-group-pressed:4px] [--pp-group-pad:24px] gap-2 mt-8 flex-wrap justify-center">
+  
+      <a href="mailto:ha_sg@outlook.com" class="inline-flex shrink-0 items-center justify-center whitespace-nowrap cursor-pointer select-none pp-state-layer pp-focus-ring pp-motion-spatial-fast disabled:cursor-default disabled:pointer-events-none aria-disabled:pointer-events-none h-14 gap-2 px-6 pp-title-medium [&amp;_[data-pp-component=icon]]:size-6 rounded-[28px] active:rounded-pp-md bg-pp-primary text-pp-on-primary hover:pp-elevation-1 disabled:bg-pp-on-surface/10 disabled:text-pp-on-surface/38 disabled:shadow-none aria-disabled:bg-pp-on-surface/10 aria-disabled:text-pp-on-surface/38 aria-disabled:shadow-none relative overflow-hidden" data-pp-component="button" data-pp-size="md" data-pp-variant="filled" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var x=e.clientX-rect.left;var y=e.clientY-rect.top;var radius=Math.sqrt(Math.pow(Math.max(x,rect.width-x),2)+Math.pow(Math.max(y,rect.height-y),2));var size=radius*2;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(x-radius)+&#39;px;top:&#39;+(y-radius)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event)">
+  
+<span class="inline-flex shrink-0 items-center">
+  <span data-pp-component="icon" class="inline-block align-[-0.125em] size-6 hero-envelope"></span>
+</span>
+
+        ha_sg@outlook.com
+      
+
+</a>
+
+    
+</div>
+  </div>
 </section>
     </main>
-    <footer class="footer sm:footer-horizontal footer-center bg-base-100 border-t border-base-300 text-base-content p-8 gap-4">
-  <nav class="flex gap-4">
-    <a href="https://github.com/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-base-content/60 hover:text-primary transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-        <path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.77-.24.77-.54 0-.27-.01-1.13-.02-2.04-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.62 1.22 3.26.94.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.11 1.15a10.8 10.8 0 0 1 5.66 0c2.16-1.45 3.11-1.15 3.11-1.15.61 1.54.23 2.68.11 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08 0 1.5-.01 2.71-.01 3.08 0 .3.2.65.78.54A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z"></path>
-      </svg>
-    </a>
-    <a href="mailto:ha_sg@outlook.com" aria-label="Email" class="text-base-content/60 hover:text-primary transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-.83.67-1.5 1.5-1.5h16.5c.83 0 1.5.67 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5V6.75Z"></path>
-        <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6"></path>
-      </svg>
-    </a>
-    <a href="https://www.credly.com/users/z7ealth" target="_blank" rel="noopener noreferrer" aria-label="Credly" class="text-base-content/60 hover:text-primary transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-      </svg>
-    </a>
-  </nav>
-  <aside>
-    <p class="text-base-content/60">© 2026 Héctor Salinas · z7ealth</p>
-  </aside>
-</footer>
-  </body>
 
+    <footer class="border-t border-pp-outline-variant bg-pp-surface-container-low">
+      <div class="mx-auto max-w-6xl px-6 py-12 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div class="space-y-3">
+          <span class="inline-flex items-center gap-2.5 ">
+  <img src="/images/z7ealth.jpg" alt="" class="size-8 rounded-pp-full">
+  <span class="pp-title-large tracking-tight">z<span class="text-pp-primary">7</span>ealth</span>
+</span>
+          <p class="pp-body-medium text-pp-on-surface-variant max-w-sm">
+            Héctor Salinas. Staff Platform Engineer in Monterrey, México, building
+            OpenShift platforms by day and Elixir open source by night.
+          </p>
+          <div class="sm:hidden"><div data-pp-component="theme-toggle" data-pp-target="html" class="inline-flex items-center gap-2">
+  <div role="group" aria-label="Theme" class="relative inline-flex shrink-0 items-center rounded-pp-full border border-pp-outline-variant p-0.5">
+    <span aria-hidden="true" class="pointer-events-none absolute start-0.5 top-0.5 size-8 rounded-pp-full bg-pp-secondary-container pp-motion-spatial-default [[data-theme=light]_&amp;]:translate-x-8 [[data-theme=dark]_&amp;]:translate-x-16"></span>
+    <button type="button" aria-label="System theme" title="System theme" data-pp-theme="system" phx-value-theme="system" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;system&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-secondary-container pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-surface-variant [[data-theme=dark]_&amp;]:text-pp-on-surface-variant">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-computer-desktop-micro"></span>
+    </button><button type="button" aria-label="Light theme" title="Light theme" data-pp-theme="light" phx-value-theme="light" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;light&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=light]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-sun-micro"></span>
+    </button><button type="button" aria-label="Dark theme" title="Dark theme" data-pp-theme="dark" phx-value-theme="dark" phx-click="[]" onclick="(function(e){var el=e.currentTarget;var rect=el.getBoundingClientRect();var size=Math.min(rect.width,rect.height)*1.6;var span=document.createElement(&#39;span&#39;);span.style.cssText=&#39;position:absolute;left:&#39;+(rect.width/2-size/2)+&#39;px;top:&#39;+(rect.height/2-size/2)+&#39;px;width:&#39;+size+&#39;px;height:&#39;+size+&#39;px;border-radius:9999px;background:currentColor;opacity:.12;pointer-events:none;transform:scale(0);transition:transform .45s cubic-bezier(.2,0,0,1),opacity .6s cubic-bezier(.2,0,0,1);&#39;;el.appendChild(span);void span.offsetWidth;span.style.transform=&#39;scale(1)&#39;;setTimeout(function(){span.style.opacity=&#39;0&#39;;},250);setTimeout(function(){span.remove();},700);})(event);(function(){var m=&quot;dark&quot;;var t=document.querySelector(&quot;html&quot;);if(!t){return;}if(m===&#39;system&#39;){t.removeAttribute(&#39;data-theme&#39;);}else{t.setAttribute(&#39;data-theme&#39;,m);}try{var v=m===&#39;system&#39;?null:m;if(v){localStorage.setItem(&#39;phx:theme&#39;,v);}else{localStorage.removeItem(&#39;phx:theme&#39;);}}catch(e){}})();" class="relative z-10 flex size-8 cursor-pointer items-center justify-center rounded-pp-full text-pp-on-surface-variant pp-focus-ring pp-motion-effects-fast [[data-theme=dark]_&amp;]:text-pp-on-secondary-container">
+      <span data-pp-component="icon" class="inline-block align-[-0.125em] size-5 hero-moon-micro"></span>
+    </button>
+  </div>
   
-    <script>
-  function log(message) {
-    if (true) {
-      console.log(`[web_dev_utils] ${message}`)
-    }
-  }
-  function connect() {
-    try {
-      window.socket = new WebSocket('ws://' + location.host + '/ws');
-
-      window.socket.onmessage = function(e) {
-        if (e.data === "reload") {
-          log("reloading!");
-          location.reload();
-        } else if (e.data === "subscribed") {
-          log("connected and subscribed!");
-        }
-      }
-
-      window.socket.onopen = () => {
-        waitForConnection(() => {
-          log("sending 'subscribe' message");
-          window.socket.send("subscribe")
-        }
-        , 300);
-      };
-
-      window.socket.onclose = () => {
-        setTimeout(() => connect(), 500);
-      };
-
-      function waitForConnection(callback, interval) {
-        log("waiting for connection!")
-        if (window.socket.readyState === 1) {
-          callback();
-        } else {
-          log("setting a timeout")
-          setTimeout(() => waitForConnection(callback, interval), interval);
-        }
-      }
-    } catch (e) {
-      log(e);
-      setTimeout(() => connect(), 500);
-    }
-  }
-
-  log("about to connect");
-  connect();
-</script>
+</div></div>
+        </div>
+        <div>
+          <p class="pp-title-small mb-3">Elsewhere</p>
+          <ul class="space-y-2 pp-body-medium text-pp-on-surface-variant">
+            <li>
+              <a class="footer-link" href="https://github.com/z7ealth" target="_blank" rel="noopener">GitHub</a>
+            </li>
+            <li>
+              <a class="footer-link" href="https://www.credly.com/users/z7ealth" target="_blank" rel="noopener">Credly</a>
+            </li>
+            <li><a class="footer-link" href="mailto:ha_sg@outlook.com">Email</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="pp-title-small mb-3">Projects</p>
+          <ul class="space-y-2 pp-body-medium text-pp-on-surface-variant">
+            <li>
+              <a class="footer-link" href="https://guiltty.dev" target="_blank" rel="noopener">
+                guiltty.dev
+              </a>
+            </li>
+            <li>
+              <a class="footer-link" href="https://phoenixpaper.dev" target="_blank" rel="noopener">
+                phoenixpaper.dev
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="pp-title-small mb-3">This site</p>
+          <p class="pp-body-medium text-pp-on-surface-variant">
+            Built with
+            <a class="footer-link text-pp-primary" href="https://github.com/elixir-tools/tableau" target="_blank" rel="noopener">
+              Tableau
+            </a>
+            and <a class="footer-link text-pp-primary" href="https://phoenixpaper.dev" target="_blank" rel="noopener">PhoenixPaper</a>.
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-pp-outline-variant">
+        <p class="mx-auto max-w-6xl px-6 py-5 text-center pp-body-small text-pp-on-surface-variant">
+          © 2026 Héctor Salinas · z7ealth
+        </p>
+      </div>
+    </footer>
+  </body>
 
   
 </html>

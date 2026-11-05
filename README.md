@@ -26,3 +26,16 @@ Running your build with `MIX_ENV=prod` is important so that the live reload JS s
 ```shell
 MIX_ENV=prod mix build
 ```
+
+To publish, build straight into `docs/` (served by GitHub Pages; `docs/CNAME` is kept):
+
+```shell
+MIX_ENV=prod mix z7ealth_website.build
+```
+
+The UI is [PhoenixPaper](https://phoenixpaper.dev). Its MD3 color theme lives in
+`assets/css/phoenix_paper_theme.css`; regenerate it rather than editing it:
+
+```shell
+mix phoenix_paper.gen.theme --seed "#14b8a6" --scheme vibrant --output assets/css/phoenix_paper_theme.css --force
+```

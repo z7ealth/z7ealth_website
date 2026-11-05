@@ -12,28 +12,30 @@ config :web_dev_utils, :reload_log, true
 # uncomment this if you use something like ngrok
 # config :web_dev_utils, :reload_url, "'wss://' + location.host + '/ws'"
 
-
 config :esbuild,
   version: "0.25.5",
   default: [
-    args: ~w(js/site.js --bundle --target=es2016 --outdir=../_site/js),
+    # "phoenix", "phoenix_live_view" and "phoenix_paper" resolve from deps/
+    # through NODE_PATH. LiveSocket runs in dead-view mode (no server): it
+    # only executes PhoenixPaper's JS commands and mounts its hook.
+    args: ~w(js/site.js --bundle --target=es2022 --outdir=../_site/js),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 config :tailwind,
-  version: "4.1.0",
+  version: "4.3.3",
   default: [
     args: ~w(
     --input=assets/css/site.css
     --output=_site/css/site.css
-    )
+    ),
+    cd: Path.expand("..", __DIR__)
   ]
 
-config :tableau, :assets, [
+config :tableau, :assets,
   tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
-  esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]},
-]
+  esbuild: {Esbuild, :install_and_run, [:default, ~w(--watch)]}
 
 config :tableau, :config,
   url: "http://localhost:4999",
@@ -60,13 +62,11 @@ config :tableau, Tableau.SitemapExtension, enabled: true
 
 config :tableau, Tableau.RSSExtension,
   enabled: true,
-  title: "z7ealth_website",
-  description: "My beautiful website"
+  title: "z7ealth",
+  description: "Héctor Salinas — Staff Platform Engineer"
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 
-config :tableau, :config,
-  include_dir: "static"
+config :tableau, :config, include_dir: "static"
 
 import_config "#{Mix.env()}.exs"
-

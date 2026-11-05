@@ -42,4 +42,3 @@ defmodule Mix.Tasks.Z7ealthWebsite.Gen.Post do
     Mix.shell().info("Succesfully created #{file_path}!")
   end
 end
-
