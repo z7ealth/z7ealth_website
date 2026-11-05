@@ -22,7 +22,7 @@ defmodule Z7ealthWebsite.RootLayout do
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0f1514" />
+        <meta name="theme-color" content="#15121c" />
         <meta
           name="description"
           content="Héctor Salinas — Staff Platform Engineer specializing in Kubernetes, OpenShift, hybrid cloud and enterprise Linux."

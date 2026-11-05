@@ -37,5 +37,5 @@ The UI is [PhoenixPaper](https://phoenixpaper.dev). Its MD3 color theme lives in
 `assets/css/phoenix_paper_theme.css`; regenerate it rather than editing it:
 
 ```shell
-mix phoenix_paper.gen.theme --seed "#14b8a6" --scheme vibrant --output assets/css/phoenix_paper_theme.css --force
+mix phoenix_paper.gen.theme --seed "#7c3aed" --scheme vibrant --output assets/css/phoenix_paper_theme.css --force
 ```

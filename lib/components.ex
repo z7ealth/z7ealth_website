@@ -1,8 +1,7 @@
 defmodule Z7ealthWebsite.Components do
   @moduledoc """
   The site's own presentational pieces, shared in spirit with guiltty.dev and
-  phoenixpaper.dev: the wordmark, eyebrow section headings, a terminal window
-  drawn the way guiltty draws one, and brand marks heroicons doesn't have.
+  phoenixpaper.dev: the wordmark, eyebrow section headings and brand marks heroicons doesn't have.
   Everything else on the page is PhoenixPaper.
   """
   use Phoenix.Component
@@ -57,61 +56,6 @@ defmodule Z7ealthWebsite.Components do
         {render_slot(@inner_block)}
       </.pp_typography>
     </div>
-    """
-  end
-
-  @doc """
-  A terminal window as guiltty draws one: a KDE-style title bar, a monospace
-  body and the flat tab bar at the bottom.
-  """
-  attr(:id, :string, required: true)
-  attr(:title, :string, default: "guiltty")
-  attr(:tabs, :list, default: [], doc: "{label, active?} tuples")
-  attr(:class, :any, default: nil)
-  slot(:inner_block, required: true)
-
-  def terminal(assigns) do
-    ~H"""
-    <div id={@id} class={["term", @class]}>
-      <div class="term-titlebar">
-        <.guiltty_mark class="term-app-icon" />
-        <span class="term-title">{@title}</span>
-        <span class="term-controls" aria-hidden="true">
-          <.pp_icon name="hero-chevron-up-micro" size="none" class="size-3.5" />
-          <.pp_icon name="hero-minus-micro" size="none" class="size-3.5" />
-          <.pp_icon name="hero-stop-micro" size="none" class="size-3" />
-          <.pp_icon name="hero-x-mark-micro" size="none" class="size-3.5" />
-        </span>
-      </div>
-      <div class="term-body">{render_slot(@inner_block)}</div>
-      <div :if={@tabs != []} class="term-tabs" aria-hidden="true">
-        <span :for={{label, active} <- @tabs} class={["term-tab", active && "is-active"]}>
-          {label}
-        </span>
-      </div>
-    </div>
-    """
-  end
-
-  @doc "guiltty's mark (`|>_`), drawn in `currentColor`."
-  attr(:class, :any, default: "size-6")
-
-  def guiltty_mark(assigns) do
-    ~H"""
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      class={@class}
-      aria-hidden="true"
-      stroke="currentColor"
-      stroke-width="6.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d="M8 18L8 46" />
-      <path d="M17 18L31 32L17 46" />
-      <path d="M42 46L56 46" />
-    </svg>
     """
   end
 

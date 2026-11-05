@@ -195,22 +195,13 @@ defmodule Z7ealthWebsite.HomePage do
     }
   ]
 
-  @prompt ~s(<span class="t-cyan">hector</span><span class="t-dim">@</span><span class="t-blue">z7ealth</span> <span class="t-magenta">~</span> <span class="t-green">❯</span> )
-
-  # The hero terminal, one string per row (trusted, static HTML).
-  @term_lines [
-    @prompt <> "whoami",
-    ~s(<b>Héctor Salinas</b> <span class="t-dim">· Staff Platform Engineer</span>),
-    @prompt <> "oc get focus",
-    ~s(<span class="t-dim">NAME                          READY   STATUS</span>),
-    ~s(openshift-virtualization      1/1     <span class="t-green">Running</span>),
-    ~s(vmware-to-kubernetes          1/1     <span class="t-green">Running</span>),
-    ~s(enterprise-linux              1/1     <span class="t-green">Running</span>),
-    ~s(infrastructure-automation     1/1     <span class="t-green">Running</span>),
-    @prompt <> "ls ~/oss",
-    ~s(<span class="t-blue">guiltty</span>  <span class="t-blue">phoenix_paper</span>  <span class="t-blue">kubevirt-tools</span>  <span class="t-blue">extop</span>  <span class="t-blue">exkl</span>),
-    @prompt <> ~s(<span class="t-cursor"></span>)
+  # The hero's profile card.
+  @current_roles [
+    {"hero-cube-transparent", "OpenShift Architect", "OXXO"},
+    {"hero-server-stack", "Linux Platform Manager", "The Home Depot México"}
   ]
+
+  @headline_certs ["RHCSA", "EX280", "CKA", "AZ-104"]
 
   def template(assigns) do
     assigns =
@@ -221,7 +212,8 @@ defmodule Z7ealthWebsite.HomePage do
         skills: @skills,
         certifications: @certifications,
         projects: @projects,
-        term_lines: @term_lines
+        current_roles: @current_roles,
+        headline_certs: @headline_certs
       })
 
     ~H"""
@@ -246,16 +238,6 @@ defmodule Z7ealthWebsite.HomePage do
             <span class="truncate">guiltty: a GPU terminal in Elixir and C</span>
             <.pp_icon name="hero-arrow-right-micro" size="none" class="size-4 shrink-0" />
           </a>
-
-          <div class="mt-8 flex items-center gap-4">
-            <img src="/images/hs.jpg" alt="Héctor Salinas" class="hero-avatar size-16 sm:size-20" />
-            <div>
-              <p class="pp-title-large">Héctor Salinas</p>
-              <p class="pp-body-medium text-pp-on-surface-variant flex items-center gap-1">
-                <.pp_icon name="hero-map-pin-micro" size="none" class="size-4" /> Monterrey, México
-              </p>
-            </div>
-          </div>
 
           <h1 class="hero-title mt-8 text-balance">
             Staff Platform Engineer.<br />
@@ -287,15 +269,60 @@ defmodule Z7ealthWebsite.HomePage do
           </.pp_button_group>
         </div>
 
-        <div class="hero-term-wrap">
-          <.terminal
-            id="hero-terminal"
-            class="hero-term"
-            title="hector@z7ealth:~"
-            tabs={[{"~/oss/guiltty", false}, {"oc login", false}, {"hector@z7ealth:~", true}]}
-          >
-            <div :for={line <- @term_lines} class="term-line">{Phoenix.HTML.raw(line)}</div>
-          </.terminal>
+        <div class="hero-card-wrap">
+          <.pp_card variant="elevated" class="hero-card" id="hero-profile">
+            <div class="flex items-center gap-5">
+              <img src="/images/hs.jpg" alt="Héctor Salinas" class="hero-avatar size-20 sm:size-24" />
+              <div class="min-w-0">
+                <p class="pp-headline-small">Héctor Salinas</p>
+                <p class="pp-title-small text-pp-primary">Staff Platform Engineer</p>
+                <p class="pp-body-medium mt-1 flex items-center gap-1 text-pp-on-surface-variant">
+                  <.pp_icon name="hero-map-pin-micro" size="none" class="size-4" /> Monterrey, México
+                </p>
+              </div>
+            </div>
+
+            <.pp_divider class="my-6" />
+
+            <p class="pp-label-medium uppercase tracking-widest text-pp-on-surface-variant">
+              Currently
+            </p>
+            <ul class="mt-3 space-y-3">
+              <li :for={{icon, role, org} <- @current_roles} class="flex items-center gap-3">
+                <span class="hero-card-icon">
+                  <.pp_icon name={icon} size="none" class="size-5" />
+                </span>
+                <span class="min-w-0">
+                  <span class="pp-title-small block">{role}</span>
+                  <span class="pp-body-small block text-pp-on-surface-variant">{org}</span>
+                </span>
+              </li>
+            </ul>
+
+            <p class="pp-label-medium mt-6 uppercase tracking-widest text-pp-on-surface-variant">
+              Certified
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <.pp_chip :for={cert <- @headline_certs} variant="input">
+                <:icon><.pp_icon name="hero-check-badge-micro" size="none" class="size-4" /></:icon>
+                {cert}
+              </.pp_chip>
+            </div>
+
+            <p class="pp-label-medium mt-6 uppercase tracking-widest text-pp-on-surface-variant">
+              Building
+            </p>
+            <div class="mt-3 grid grid-cols-2 gap-2">
+              <a href="https://guiltty.dev" target="_blank" rel="noopener" class="hero-card-link">
+                <img src="/images/projects/guiltty.svg" alt="" class="size-5" />
+                <span>guiltty</span>
+              </a>
+              <a href="https://phoenixpaper.dev" target="_blank" rel="noopener" class="hero-card-link">
+                <img src="/images/projects/phoenixpaper.svg" alt="" class="size-5" />
+                <span>PhoenixPaper</span>
+              </a>
+            </div>
+          </.pp_card>
         </div>
       </div>
     </section>
