@@ -14,7 +14,12 @@ defmodule Z7ealthWebsite.RootLayout do
   ]
 
   def template(assigns) do
-    assigns = Map.put(assigns, :nav_links, @nav_links)
+    # A per-build query string, so browsers fetch the new CSS/JS after each
+    # deploy instead of reusing a cached copy of the same URL.
+    assigns =
+      assigns
+      |> Map.put(:nav_links, @nav_links)
+      |> Map.put(:v, System.system_time(:second))
 
     ~H"""
     <!DOCTYPE html>
@@ -42,8 +47,8 @@ defmodule Z7ealthWebsite.RootLayout do
           type="font/woff2"
           crossorigin
         />
-        <link rel="stylesheet" href="/css/site.css" />
-        <script defer src="/js/site.js">
+        <link rel="stylesheet" href={"/css/site.css?v=#{@v}"} />
+        <script defer src={"/js/site.js?v=#{@v}"}>
         </script>
         <%!-- No data-theme by default: the page follows the OS (PhoenixPaper's
               "System"). A Light/Dark choice from the theme toggle is saved
