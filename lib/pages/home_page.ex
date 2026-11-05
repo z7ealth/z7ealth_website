@@ -157,8 +157,7 @@ defmodule Z7ealthWebsite.HomePage do
           <h1 class="name mt-7">Héctor Salinas</h1>
           <p class="pp-title-large mt-3 text-pp-primary">Staff Platform Engineer</p>
           <p class="pp-body-large mt-4 max-w-sm text-pp-on-surface-variant text-pretty">
-            I build and run the platforms other teams ship on: OpenShift, Kubernetes and
-            enterprise Linux. Elixir and C after hours.
+            OpenShift, Kubernetes and enterprise Linux at scale, from architecture to production.
           </p>
           <p class="pp-body-medium mt-4 flex items-center gap-1.5 text-pp-on-surface-variant">
             <span class="status-dot" aria-hidden="true"></span> Monterrey, México
