@@ -1,11 +1,9 @@
 defmodule Z7ealthWebsite.Components do
   @moduledoc """
-  The site's own presentational pieces, shared in spirit with guiltty.dev and
-  phoenixpaper.dev: the wordmark, eyebrow section headings and brand marks heroicons doesn't have.
-  Everything else on the page is PhoenixPaper.
+  The site's own small pieces: contact details, a section wrapper, tag pills
+  and the GitHub mark. Buttons, icons and the theme toggle are PhoenixPaper.
   """
   use Phoenix.Component
-  use PhoenixPaper.Components
 
   @email "ha_sg@outlook.com"
   @github "https://github.com/z7ealth"
@@ -15,47 +13,32 @@ defmodule Z7ealthWebsite.Components do
   def github, do: @github
   def credly, do: @credly
 
-  @doc "The avatar and the `z7ealth` wordmark."
-  attr(:class, :any, default: nil)
+  @doc """
+  A content section. The heading shows on small screens only: on large
+  screens the sidebar nav names the section.
+  """
+  attr(:id, :string, required: true)
+  attr(:title, :string, required: true)
+  slot(:inner_block, required: true)
 
-  def wordmark(assigns) do
+  def section(assigns) do
     ~H"""
-    <span class={["inline-flex items-center gap-2.5", @class]}>
-      <img src="/images/z7ealth.jpg" alt="" class="size-8 rounded-pp-full" />
-      <span class="pp-title-large tracking-tight">z<span class="text-pp-primary">7</span>ealth</span>
-    </span>
+    <section id={@id} aria-label={@title} class="content-section">
+      <h2 class="section-title lg:sr-only">{@title}</h2>
+      {render_slot(@inner_block)}
+    </section>
     """
   end
 
-  @doc "An eyebrow, a display headline and an optional lead paragraph."
-  attr(:eyebrow, :string, required: true)
-  attr(:title, :string, required: true)
+  @doc "A row of small tag pills."
+  attr(:tags, :list, required: true)
   attr(:class, :any, default: nil)
-  slot(:inner_block)
 
-  def section_header(assigns) do
+  def tags(assigns) do
     ~H"""
-    <div class={["max-w-2xl", @class]}>
-      <.pp_typography
-        variant="label-large"
-        color="primary"
-        tag="p"
-        class="uppercase tracking-[0.2em]"
-      >
-        {@eyebrow}
-      </.pp_typography>
-      <.pp_typography variant="display-small" emphasized tag="h2" class="mt-3 text-balance">
-        {@title}
-      </.pp_typography>
-      <.pp_typography
-        :if={@inner_block != []}
-        variant="body-large"
-        color="on-surface-variant"
-        class="mt-4 text-pretty"
-      >
-        {render_slot(@inner_block)}
-      </.pp_typography>
-    </div>
+    <ul class={["flex flex-wrap gap-1.5", @class]} aria-label="Technologies">
+      <li :for={tag <- @tags} class="tag">{tag}</li>
+    </ul>
     """
   end
 

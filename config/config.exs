@@ -15,9 +15,6 @@ config :web_dev_utils, :reload_log, true
 config :esbuild,
   version: "0.25.5",
   default: [
-    # "phoenix", "phoenix_live_view" and "phoenix_paper" resolve from deps/
-    # through NODE_PATH. LiveSocket runs in dead-view mode (no server): it
-    # only executes PhoenixPaper's JS commands and mounts its hook.
     args: ~w(js/site.js --bundle --target=es2022 --outdir=../_site/js),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
